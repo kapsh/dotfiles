@@ -1,0 +1,49 @@
+# Ignore all except dotfiles and ~/bin
+/[^.]*
+!/bin
+
+# Shell stuff
+.bash_history
+.fastfile
+.oh-my-zsh
+.z
+.zcompdump*
+.zsh-update
+.zsh_history
+
+# Very private
+.ssh/
+
+# wow such desktop much shit
+.cache/
+.dbus/
+.icons/
+.local/
+.thumbnails/
+.Xauthority
+.xdisplay
+.java
+.lyrics/
+.config/
+
+# Browsers data
+.links
+.w3m
+
+# History files
+.lesshst
+.gnuplot_history
+.viminfo
+.gmrun_history
+
+# Games
+.xgamelist
+.openarena/
+
+# Misc
+.gitconfig
+.qingy
+.wget-hsts
+.pki/
+.python-eggs/
+
