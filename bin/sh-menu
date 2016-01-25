@@ -1,0 +1,25 @@
+#!/bin/bash
+
+MENU=$HOME/.sh-menu
+if ! [ -f "$MENU" ]; 
+then 
+    echo $MENU not found!
+    exit;
+fi
+
+count=1
+while read line; do
+    labels[$count]="`echo $line | cut -s -d '|' -f1`"
+    commands[$count]="`echo $line | cut -s -d '|' -f2`"
+    let count++
+done < $MENU
+
+echo $labels
+for (( i=1; i<count; i++)); do
+    items[$i]="$i ${labels[$i]}"
+    echo ${items[*]}
+done
+
+tempfile=`mktemp`
+dialog --menu 'Select an action:' 0 0 0 ${items[*]} 2>$tempfile
+if [ $? == 0 ]; then exec ${commands[`cat $tempfile`]}; fi

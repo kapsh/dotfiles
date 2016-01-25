@@ -1,0 +1,18 @@
+# Geeknote wrapper
+#!/bin/sh
+
+BOLD='\033[1m'
+NORMAL='\033[00m'
+
+echo -n "${BOLD}Title:${NORMAL} "
+read title 
+echo "${BOLD}Note:${NORMAL} "
+read note
+echo -n "${BOLD}Tags${NORMAL} (optional): "
+read tags
+
+if [ -z "$tags" ]
+    then tags="unsorted"
+fi
+
+geeknote create --title "$title" --content "$note" --tags "$tags"

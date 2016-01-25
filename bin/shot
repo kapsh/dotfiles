@@ -1,0 +1,46 @@
+#!/bin/sh
+
+#selfdoc
+# Wrapper to scrot. Recommended to bound to the Printscreen button. 
+# Takes screendirhot, saves it to '$screendir/date_time.png'
+# and makes symlink to it '$screendir/last.png'. 
+
+# Supports almost all scrot options such as: 
+#   -d n    - wait n seconds,
+#   -s      - select rectangle or window with mouse,
+#   -u      - use focused window. 
+
+# screendirhots will be saved in this dir. 
+# Create it first! (Otherwise you'll get 'giblib error')
+screendir="$HOME/screenshots"
+#selfdoc
+
+case "$1" in
+    ( '-h' | '--help' | 'help' )
+        sed -ne '/selfdoc/,/selfdoc/ {
+            /selfdoc/d; s/# //; p }' < "$0"
+        exit;;
+esac
+
+error() { 
+    echo "Error: $1"
+    exit 1
+}
+
+if ! [ -x "`which scrot`" ]; then
+    error "I need scrot for this!"
+fi
+
+if ! [ -d "$screendir" ]; then 
+    error "$screendir does not exist!"
+fi
+
+# Main logic goes here. 
+
+filename=`date '+%Y-%m-%d_%H-%M-%S.png'`
+
+scrot --border --quality 75 \
+    $screendir/$filename $@ 
+
+[ "$?" == 0 ] && echo $filename
+
