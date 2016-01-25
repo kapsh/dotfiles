@@ -2,6 +2,10 @@
 /[^.]*
 !/bin
 
+########################################
+#	Ignore							   #
+########################################
+
 # Shell stuff
 .bash_history
 .fastfile
@@ -22,9 +26,9 @@
 .thumbnails/
 .Xauthority
 .xdisplay
-.java
+.java/
 .lyrics/
-.config/
+/.config/
 
 # Browsers data
 .links
@@ -47,3 +51,9 @@
 .pki/
 .python-eggs/
 
+########################################
+# Include this						   #
+########################################
+
+!.config/awesome/
+!.config/termite/
