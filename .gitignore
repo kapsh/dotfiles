@@ -7,54 +7,62 @@
 ########################################
 
 # Shell stuff
-.bash_history
-.fastfile
-.oh-my-zsh
-.z
-.zcompdump*
-.zsh-update
-.zsh_history
+/.bash_history
+/.fastfile
+/.oh-my-zsh
+/.z
+/.zcompdump*
+/.zsh-update
+/.zsh_history
 
 # Very private
-.ssh/
+/.ssh/
 
 # wow such desktop much shit
-.cache/
-.dbus/
-.icons/
-.local/
-.thumbnails/
-.Xauthority
-.xdisplay
-.java/
-.lyrics/
+/.cache/
+/.dbus/
+/.icons/
+/.local/
+/.thumbnails/
+/.Xauthority
+/.xdisplay
+/.java/
 /.config/*
 
+# Music players data
+/.lyrics
+/.covers
+
 # Browsers data
-.links
-.w3m
+/.links
+/.w3m
 
 # History files
-.lesshst
-.gnuplot_history
-.viminfo
-.gmrun_history
+/.lesshst
+/.gnuplot_history
+/.viminfo
+/.gmrun_history
 
 # Games
-.xgamelist
-.openarena/
+/.xgamelist
+/.openarena/
 
 # Misc
-.gitconfig
-.qingy
-.wget-hsts
-.pki/
-.python-eggs/
+/.gitconfig
+/.qingy
+/.wget-hsts
+/.pki/
+/.python-eggs/
 
 ########################################
 # Include this						   #
 ########################################
 
-!.config/awesome/
-!.config/termite/
-!.config/htop/htoprc
+!/.config/awesome/
+!/.config/termite/
+!/.config/htop/htoprc
+
+# XDG directories setup
+!/.config/user-dirs.conf
+!/.config/user-dirs.dirs
+
