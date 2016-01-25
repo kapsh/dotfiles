@@ -28,7 +28,7 @@
 .xdisplay
 .java/
 .lyrics/
-/.config/
+/.config/*
 
 # Browsers data
 .links
@@ -57,3 +57,4 @@
 
 !.config/awesome/
 !.config/termite/
+!.config/htop/htoprc
