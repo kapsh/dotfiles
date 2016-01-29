@@ -49,7 +49,7 @@ ZSH_CUSTOM=$HOME/.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z cp dirhistory fastfile fancy-ctrl-z history jump plop)
+plugins=(git z cp dirhistory fastfile fancy-ctrl-z history jump )
 
 # User configuration
 
