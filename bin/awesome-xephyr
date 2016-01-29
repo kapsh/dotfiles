@@ -1,0 +1,16 @@
+#!/bin/sh 
+
+display=":42"
+
+if [ -n "$1" ]; then 
+    config="$1"
+else 
+    config="$HOME/.config/awesome/test.lua"
+fi
+
+Xephyr "$display" -screen 1024x768 & 
+export DISPLAY="$display" 
+echo "DISPLAY inside Xephyr: $DISPLAY" 
+sleep 2 
+awesome -c "$config" & 
+

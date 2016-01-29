@@ -1,0 +1,16 @@
+# Simple wrapper for great Dropbox cli-face.
+# https://github.com/andreafabrizi/Dropbox-Uploader
+#!/bin/sh
+
+if [ -z "$1" ]; then 
+    echo "NEED MORE FILES"
+    exit
+fi
+
+if [ -z "$2" ]
+    then remote_filename=`basename "$1"`
+    else remote_filename="$2"
+fi
+
+drop2box upload "$1" $remote_filename
+drop2box share $remote_filename | egrep -o 'https?://.*' | xclip -f

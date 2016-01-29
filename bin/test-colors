@@ -1,0 +1,33 @@
+#!/usr/bin/env perl
+
+my @cn = ("black  ", "red    ", "green  ", "yellow ", "blue   ", "purple ", "cyan   ", "white  ");
+for ( my $j=8; $j<16; $j++ ) {
+    for ( my $i=0; $i<8; $i++) {
+        print "\x1b[38;5;${j}m\x1b[48;5;${i}m $cn[$j-8] \x1b[0m ";
+    }
+    print "\n";
+}
+
+print "\n";
+
+for ( my $j=0; $j<8; $j++ ) {
+    for ( my $i=8; $i<16; $i++) {
+        print "\x1b[38;5;${j}m\x1b[48;5;${i}m $cn[$j-8] \x1b[0m ";
+    }
+    print "\n";
+}
+
+print "\n";
+
+for ( my $j=0; $j<8; $j++ ) {
+    print "\x1b[1m\x1b[38;5;${j}m $cn[$j-8] \x1b[0m ";
+}
+
+print "\n";
+
+for ( my $j=0; $j<8; $j++ ) {
+    print "\x1b[38;5;${j}m $cn[$j-8] \x1b[0m ";
+}
+
+print "\n";
+
