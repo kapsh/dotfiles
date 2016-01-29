@@ -11,7 +11,7 @@
 /.fastfile
 /.oh-my-zsh
 /.z
-/.zcompdump*
+.zcompdump*
 /.zsh-update
 /.zsh_history
 

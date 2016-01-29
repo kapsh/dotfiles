@@ -5,10 +5,11 @@
 # Set terminal
 Terminal = termite
 TermExec = ${Terminal} -e
-AlwaysInTerm = ssh ftp mc vim man mocp htop alsamixer xgame 
+AlwaysInTerm = ssh ftp mc vim man mocp htop alsamixer xgame
 
-# Set apps 
+# Set apps
 Browser = google-chrome-stable
+Office = loffice
 
 # Set window geometry (except height)
 Width = 400
@@ -28,7 +29,7 @@ ShowDotFiles = 0
 
 # Timeout (in milliseconds) after which gmrun will simulate a TAB press
 # Set this to NULL if don't like this feature.
-TabTimeout = 500
+TabTimeout = 300
 
 # URL handlers
 # If the entered text is "http://www.google.com" then:
@@ -46,6 +47,8 @@ URL_info = ${TermExec} 'info %s'
 URL_sh = sh -c '%s'
 
 # extension handlers
-EXT:doc,rtf = abiword %s
+EXT:doc,docx,odf,rtf = ${Office} %s
+EXT:xls,xlsx,osd = ${Office} %s
 EXT:txt,cc,cpp,h,java,html,htm,epl,tex,latex,js,css,xml,xsl,am = gvim %s
 EXT:pdf = mupdf %s
+
