@@ -1,0 +1,75 @@
+-- vim: noet ai cindent syntax=lua
+--[[
+Conky as small bar at screen bottom (for using with awesome)
+]]
+
+conky.config = {
+	-- Fit in wibox
+	alignment = 'bottom_middle',
+	gap_x = 5,
+	gap_y = 2,
+	minimum_height = 10,
+	minimum_width = 1920,
+	maximum_width = 1920,
+
+	-- Daemonize
+	background = true,
+	--	Border width
+	border_width = 0,
+
+	-- Predefined colors
+	color0 = 'black',
+	color1 = 'blue',
+	color3 = '#e2eeea',
+
+	-- The number of samples to average for monitoring
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+
+	-- Defaults for bars
+	default_bar_height = 10,
+	default_bar_width = 30,
+	-- Defaults for graphs
+	default_graph_height = 10,
+	default_graph_width = 50,
+	-- Default colors
+	default_color = 'black',
+	-- eliminates flicker
+	double_buffer = true,
+	-- Drawing options
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = false,
+	use_spacer = 'right',
+
+	use_xft = true,
+	font = 'Droid Sans Mono:size=9',
+	extra_newline = false,
+	format_human_readable = true,
+
+	-- MPD settings
+	mpd_host = 'localhost',
+	mpd_port = 6600,
+
+	-- Output options
+	out_to_console = false,
+	out_to_x = true,
+	no_buffers = true,
+
+	-- Own window options
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_colour = '#e2eeea',
+	own_window_transparent = false,
+	own_window_argb_visual = false,
+	own_window_hints = 'sticky,skip_taskbar,skip_pager',
+
+	update_interval = 1
+}
+
+conky.text = [[
+ CPU: ${cpu}% ${cpugraph 10,30 -t -l} \
+| Mem: ${mem} \
+| system: ${diskiograph 10,30 sdb} | storage: ${diskiograph 10,30 sda} \
+]]

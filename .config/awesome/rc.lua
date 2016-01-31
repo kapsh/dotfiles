@@ -646,7 +646,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Some things should be launched when Awesome is already active
 local cmds = {
 --myxkbmap", -- Replaced by system-wide settings in xorg.conf
-	"conky",
+	"conky -c ~/.conky/conkybar",
 	"fuck_wibox",
 }
 
