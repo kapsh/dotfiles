@@ -420,8 +420,9 @@ clientkeys = awful.util.table.join(
 	keydoc.add({ modkey			  }, "c",	   function (c) c:kill() end,
 		"Close window"),
 
-	keydoc.add({ modkey, "Shift"   }, "c",		function (c) myutils.exec("xkill -id " .. c.window) end,
-		"Force close (xkill)"),
+--	keydoc.add({ modkey, "Shift"   }, "c",		function (c) myutils.exec("xkill -id " .. c.window) end,
+	keydoc.add({ modkey, "Shift"   }, "c",		function (c) myutils.exec("xkill") end,
+		"Execute xkill"),
 
 	keydoc.add({ modkey, "Control" }, "space",	awful.client.floating.toggle,
 		"Toggle floating status"),
