@@ -40,7 +40,6 @@
 # History files
 /.lesshst
 /.gnuplot_history
-/.viminfo
 /.gmrun_history
 /.recently-used
 /.python_history
@@ -48,6 +47,11 @@
 # Games
 /.xgamelist
 /.openarena/
+
+# Exclude vim runtime files and vundle-managed stuff
+/.vim-runtime
+/.vim/misc/notes
+/.vim/bundle
 
 # Misc
 /.gitconfig
@@ -59,6 +63,8 @@
 ########################################
 # Include this						   #
 ########################################
+
+# .config is full of bloatware, but contains some manually created files. Add them.
 
 !/.config/awesome/
 !/.config/termite/

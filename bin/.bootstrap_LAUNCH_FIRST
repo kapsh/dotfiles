@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if ! [ -x "`which git`" ]; then
+	echo "Git is not installed, exiting"
+	exit 1
+fi
+
+echo "Creating necessary directories for vim"
+mkdir -p -v "$HOME/.vim/bundle"
+mkdir -p -v "$HOME/.vim-runtime/{backups,sessions,swaps,undodir}"
+
+# Install Oh My Zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+# Install Vundle and let him download other plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
