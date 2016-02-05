@@ -105,6 +105,10 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 " Python IDE
 Plugin 'klen/python-mode'
 
+" Replace with preserving case
+Plugin 'keepcase.vim'
+Plugin 'Shortcut-functions-for-KeepCase-script-'
+
 " Visually shows the location of marks
 " Disabled for fixing bugs
 "Plugin 'ShowMarks'
