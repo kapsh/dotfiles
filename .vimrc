@@ -33,6 +33,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 
+" Toggle the cursor shape in the terminal for Vim
+Plugin 'jszakmeister/vim-togglecursor'
+
 " Nice start screen
 Plugin 'mhinz/vim-startify'
 
