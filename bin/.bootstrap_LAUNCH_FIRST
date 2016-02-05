@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! [ -x "`which git`" ]; then
 	echo "Git is not installed, exiting"
@@ -6,8 +6,8 @@ if ! [ -x "`which git`" ]; then
 fi
 
 echo "Creating necessary directories for vim"
-mkdir -p -v "$HOME/.vim/bundle"
-mkdir -p -v "$HOME/.vim-runtime/{backups,sessions,swaps,undodir}"
+mkdir -p -v $HOME/.vim/bundle
+mkdir -p -v $HOME/.vim-runtime/{backups,sessions,swaps,undodir}
 
 # Install Oh My Zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
