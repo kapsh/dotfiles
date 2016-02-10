@@ -54,7 +54,6 @@
 /.vim/bundle
 
 # Misc
-/.gitconfig
 /.qingy
 /.wget-hsts
 /.pki/
