@@ -63,6 +63,9 @@ beautiful.init(themedir .. "sky-mod.lua")
 -- Default modkey.
 modkey = "Mod4"
 
+-- Set true for remember why I disable it
+local sloppy_focus = false
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local all_layouts =
 {
@@ -571,14 +574,15 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
-	-- Enable sloppy focus
-	c:connect_signal("mouse::enter", function(c)
-		if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-			-- Workaround for prevent easy getting focus by conky
-			and c.class ~= "Conky" and awful.client.focus.filter(c) then
-			client.focus = c
-		end
-	end)
+	if sloppy_focus then
+		c:connect_signal("mouse::enter", function(c)
+			if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+				-- Workaround for prevent easy getting focus by conky
+				and c.class ~= "Conky" and awful.client.focus.filter(c) then
+				client.focus = c
+			end
+		end)
+	end
 
 	if not startup then
 		-- Set the windows at the slave,
