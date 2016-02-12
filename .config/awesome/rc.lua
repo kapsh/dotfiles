@@ -181,8 +181,8 @@ mytaglist.buttons = awful.util.table.join(
 	awful.button({ modkey }, 1, awful.client.movetotag),
 	awful.button({ }, 3, awful.tag.viewtoggle),
 	awful.button({ modkey }, 3, awful.client.toggletag),
-	awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
-	awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
+	awful.button({ }, 5, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
+	awful.button({ }, 4, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
 )
 
 mytasklist = {}
@@ -275,8 +275,8 @@ end
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
 awful.button({ }, 3, function() menu_main:toggle() end),
-awful.button({ }, 4, awful.tag.viewnext),
-awful.button({ }, 5, awful.tag.viewprev)
+awful.button({ }, 5, awful.tag.viewnext),
+awful.button({ }, 4, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -574,6 +574,7 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
+
 	if sloppy_focus then
 		c:connect_signal("mouse::enter", function(c)
 			if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
@@ -640,7 +641,8 @@ client.connect_signal("manage", function (c, startup)
 
 		awful.titlebar(c):set_widget(layout)
 	end
-end)
+
+end) -- connect signal "manage"
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
