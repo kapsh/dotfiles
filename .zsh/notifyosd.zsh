@@ -3,7 +3,11 @@
 # https://gist.github.com/shockone/5255331
 
 function active-window-id {
-    echo `xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}'`
+	if [ -n "$DISPLAY" ]; then
+		echo `xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}'`
+	else
+		echo "NOT_IN_X"
+	fi
 }
 
 # end and compare timer, notify-send if needed
