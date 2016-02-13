@@ -197,7 +197,7 @@ menubar.utils.cmd_terminal = cmd_terminal
 mytextclock = awful.widget.textclock( " <b>%a, %d %b, %H:%M:%S</b> ", 1 )
 
 -- Wibox for conky
-mystatusbar = awful.wibox({ position = "bottom", screen = 1, ontop = false, width = 1, height = 20 })
+--mystatusbar = awful.wibox({ position = "bottom", screen = 1, ontop = false, width = 1, height = 20 })
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -682,7 +682,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Some things should be launched when Awesome is already active
 local cmds = {
 --myxkbmap", -- Replaced by system-wide settings in xorg.conf
-	"conky -c ~/.conky/conkybar",
+	--"conky -c ~/.conky/conkybar",
 	"fuck_wibox",
 }
 
