@@ -413,8 +413,6 @@ globalkeys = awful.util.table.join(
 			if browser_window == nil then
 				myutils.exec(cmd_browser)
 			end
-			-- Browser tag is hardcoded for now
-			awful.tag.viewonly(tags[1][4])
 		end,
 		"Browser"),
 
@@ -599,7 +597,10 @@ awful.rules.rules = {
 
 	-- Set browsers to always map on tag number 4 of screen 1.
 	{ rule_any = { class = { class_browser, "firefox-bin" } },
-		properties = { tag = tags[1][4] }
+		properties = {
+			tag = tags[1][4],
+			switchtotag = true
+		}
 	},
 
 	-- xev has no WM_CLASS
