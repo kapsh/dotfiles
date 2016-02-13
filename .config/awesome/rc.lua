@@ -168,6 +168,10 @@ for s = 1, screen.count() do
 	-- Each screen has its own tag table.
 	tags[s] = awful.tag(tags.names, s, tags.layouts)
 end
+
+-- Big chat window for im clients
+awful.tag.setmwfact(0.8, tags[1][9])
+
 -- }}}
 
 -- {{{ Menu
@@ -577,7 +581,10 @@ awful.rules.rules = {
 		buttons = clientbuttons }
 	},
 
-	{ rule = { class = "Xgame-gtk2" },
+	-- Floating windows
+	{ rule_any = { class = {
+			"Xgame-gtk2",
+		} },
 		properties = { floating = true }
 	},
 
