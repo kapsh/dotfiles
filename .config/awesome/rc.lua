@@ -145,17 +145,18 @@ end
 -- All possible layouts defined above in all_layouts
 -- Define a tag table which hold all screen tags.
 tags = {
-	names = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
 	layouts = {
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile,
+		awful.layout.suit.tile,	-- 1
+		awful.layout.suit.tile,	-- 2
+		awful.layout.suit.tile,	-- 3
+		awful.layout.suit.max,	-- 4
+		awful.layout.suit.tile,	-- 5
+		awful.layout.suit.tile,	-- 6
+		awful.layout.suit.tile,	-- 7
+		awful.layout.suit.tile,	-- 8
+		awful.layout.suit.tile,	-- 9
+		awful.layout.suit.tile,	-- 0
 	}
 }
 
@@ -404,11 +405,12 @@ globalkeys = awful.util.table.join(
 		function()
 			-- run_or_raise selects wrong window when multiple of them opened
 			-- awful.client.run_or_raise(cmd_browser, function(c) return c.class == class_browser end, false)
-			chrome = awful.client.iterate(function(c) return c.class == class_browser end)()
-			if chrome == nil then
+			browser_window = awful.client.iterate(function(c) return c.class == class_browser end)()
+			if browser_window == nil then
 				myutils.exec(cmd_browser)
 			end
-			awful.tag.viewonly(tags[1][2])
+			-- Browser tag is hardcoded for now
+			awful.tag.viewonly(tags[1][4])
 		end,
 		"Browser"),
 
@@ -491,8 +493,9 @@ clientkeys = awful.util.table.join(
 )
 
 -- Bind all key numbers to tags.
--- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+-- Be careful: we use keycodes to make it works on any keyboard layout.
+-- This should map on the top row of your keyboard: from 1 to 0.
+for i = 1, 10 do
 	globalkeys = awful.util.table.join(globalkeys,
 
 		keydoc.group("Tags"),
@@ -576,14 +579,6 @@ awful.rules.rules = {
 		properties = { floating = true }
 	},
 
-	--[[	{ rule = { class = "Conky" },
-	properties = {
-	floating = true,
-	sticky = true,
-	ontop = false,
-	focusable = false }
-	}, ]]
-
 	-- Prevent gmrun hiding
 	{ rule = { class = "Gmrun" },
 		properties = {
@@ -598,9 +593,9 @@ awful.rules.rules = {
 		sticky = true }
 	},
 
-	-- Set Chrome to always map on tags number 2 of screen 1.
-	{ rule = { class = class_browser },
-		properties = { tag = tags[1][2] }
+	-- Set browsers to always map on tag number 4 of screen 1.
+	{ rule_any = { class = { class_browser, "firefox-bin" } },
+		properties = { tag = tags[1][4] }
 	},
 
 } -- Rules end
