@@ -105,7 +105,9 @@ local all_layouts =
 	awful.layout.suit.magnifier
 }
 
--- Some helpers
+-- }}}
+
+-- {{{ Some helpers
 function switch_layout(step)
 	awful.layout.inc(all_layouts, step)
 	myutils.notify( awful.layout.get(mouse.screen).name, 2 )
@@ -121,9 +123,11 @@ function var_in_list(var, list)
 end
 
 function title_needed(class)
-	for _,pattern in pairs(titles_for) do
-		if string.match(class, pattern) then
-			return true
+	if class ~= nil then
+		for _,pattern in pairs(titles_for) do
+			if string.match(class, pattern) then
+				return true
+			end
 		end
 	end
 	return false
@@ -596,6 +600,13 @@ awful.rules.rules = {
 	-- Set browsers to always map on tag number 4 of screen 1.
 	{ rule_any = { class = { class_browser, "firefox-bin" } },
 		properties = { tag = tags[1][4] }
+	},
+
+	-- xev has no WM_CLASS
+	{ rule = { name = "Event Tester" },
+		properties = {
+			ontop = true,
+			floating = true }
 	},
 
 } -- Rules end
