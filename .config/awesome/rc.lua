@@ -52,6 +52,7 @@ cmd_browser = "google-chrome-stable"
 
 -- Window classes
 class_browser = "google-chrome"
+class_terminal = "Termite"
 
 -- Directories
 confdir = awful.util.getdir("config") .. "/"
@@ -65,6 +66,15 @@ modkey = "Mod4"
 
 -- Set true for remember why I disable it
 local sloppy_focus = false
+
+-- Enable titlebars only for listed below windows classes (wildcards supported)
+local titlebars_enabled = true
+local titles_for =
+{
+	class_terminal,
+	"Gvim",
+	"libreoffice-.*",
+}
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local all_layouts =
@@ -99,6 +109,25 @@ function switch_layout(step)
 	awful.layout.inc(all_layouts, step)
 	myutils.notify( awful.layout.get(mouse.screen).name, 2 )
 end
+
+function var_in_list(var, list)
+	for _,item in pairs(list) do
+		if item == var then
+			return true
+		end
+	end
+	return false
+end
+
+function title_needed(class)
+	for _,pattern in pairs(titles_for) do
+		if string.match(class, pattern) then
+			return true
+		end
+	end
+	return false
+end
+
 -- }}}
 
 -- {{{ Wallpaper
@@ -597,8 +626,7 @@ client.connect_signal("manage", function (c, startup)
 		end
 	end
 
-	local titlebars_enabled = false
-	if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
+	if titlebars_enabled and title_needed(c.class) then
 		-- buttons for the titlebar
 		local buttons = awful.util.table.join(
 		awful.button({ }, 1, function()
@@ -620,11 +648,12 @@ client.connect_signal("manage", function (c, startup)
 
 		-- Widgets that are aligned to the right
 		local right_layout = wibox.layout.fixed.horizontal()
+		--[[ Awesome windows controls are awful
 		right_layout:add(awful.titlebar.widget.floatingbutton(c))
 		right_layout:add(awful.titlebar.widget.maximizedbutton(c))
 		right_layout:add(awful.titlebar.widget.stickybutton(c))
 		right_layout:add(awful.titlebar.widget.ontopbutton(c))
-		right_layout:add(awful.titlebar.widget.closebutton(c))
+		right_layout:add(awful.titlebar.widget.closebutton(c)) ]]
 
 		-- The title goes in the middle
 		local middle_layout = wibox.layout.flex.horizontal()
@@ -639,7 +668,7 @@ client.connect_signal("manage", function (c, startup)
 		layout:set_right(right_layout)
 		layout:set_middle(middle_layout)
 
-		awful.titlebar(c):set_widget(layout)
+		awful.titlebar(c, {size = 20} ):set_widget(layout)
 	end
 
 end) -- connect signal "manage"
