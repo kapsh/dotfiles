@@ -14,6 +14,7 @@ local menubar = require("menubar")
 local myutils = require("mylib/myutils")
 local kbdwidget = require("mylib/kbdwidget")
 local keydoc = require("mylib/keydoc")
+local hints = require("mylib/hints")
 
 
 -- {{{ Error handling
@@ -127,6 +128,8 @@ function title_needed(class)
 	end
 	return false
 end
+
+hints.init()
 
 -- }}}
 
@@ -363,6 +366,9 @@ globalkeys = awful.util.table.join(
 			end
 		end,
 		"Previous focused window"),
+
+	keydoc.add({ modkey,		   }, "b", function() hints.focus() end,
+		"Show hints for select windows"),
 
 	keydoc.group("Layout manipulation"),
 
