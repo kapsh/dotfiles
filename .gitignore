@@ -36,6 +36,8 @@
 # Browsers data
 /.links
 /.w3m
+/.mozilla
+/.macromedia
 
 # History files
 /.lesshst
@@ -48,16 +50,23 @@
 /.xgamelist
 /.openarena/
 
-# Exclude vim runtime files and vundle-managed stuff
+# Exclude vim runtime files
 /.vim-runtime
-/.vim/misc/notes
+# and vundle-managed stuff
 /.vim/bundle
+# and files for vim-notes
+/.vim/misc/notes
+
+# db guis
+/.pgpass
+/.pgadmin3
 
 # Misc
 /.qingy
 /.wget-hsts
 /.pki/
 /.python-eggs/
+/.thunderbird/
 
 ########################################
 # Include this						   #
