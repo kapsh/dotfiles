@@ -149,7 +149,7 @@ end
 -- All possible layouts defined above in all_layouts
 -- Define a tag table which hold all screen tags.
 tags = {
-	names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
+	names = { "1", "2", "3", "4:www", "5:rdp", "6", "7", "8", "9:im", "0:mail" },
 	layouts = {
 		awful.layout.suit.tile,	-- 1
 		awful.layout.suit.tile,	-- 2
@@ -168,6 +168,9 @@ for s = 1, screen.count() do
 	-- Each screen has its own tag table.
 	tags[s] = awful.tag(tags.names, s, tags.layouts)
 end
+
+awful.tag.setmwfact(0.8, tags[1][9])
+
 -- }}}
 
 -- {{{ Menu
@@ -179,7 +182,7 @@ menu_awesome = {
 
 menu_shutdown = {
 	{ "Logout", awesome.quit },
-	{ "Suspend", "sudo /usr/sbin/pm-suspend" },
+	{ "Suspend", "sleeplock" },
 	{ "Reboot", "sudo /sbin/shutdown -r now" }
 }
 
@@ -607,6 +610,18 @@ awful.rules.rules = {
 		properties = {
 			ontop = true,
 			floating = true }
+	},
+
+	{ rule = { class = "rdesktop" },
+		properties = { tag = tags[1][5] }
+	},
+
+	{ rule = { class = "Skype" },
+		properties = { tag = tags[1][9] }
+	},
+
+	{ rule = { class = "Thunderbird" },
+		properties = { tag = tags[1][10] }
 	},
 
 } -- Rules end
