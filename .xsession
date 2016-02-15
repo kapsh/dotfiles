@@ -5,8 +5,12 @@ echo "$DISPLAY" > "$HOME"/.xdisplay &
 # if wasm't set automatically
 xrdb -merge .Xresources
 
+skype &
+
+thunderbird-bin &
+
 # Yandex-disk client
-yandex-disk start
+#yandex-disk start &
 
 # Clipboard manager
 parcellite &

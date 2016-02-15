@@ -43,8 +43,9 @@
 /.lesshst
 /.gnuplot_history
 /.gmrun_history
-/.recently-used
+/.recently-used*
 /.python_history
+/.gtk-bookmarks
 
 # Games
 /.xgamelist
@@ -60,6 +61,7 @@
 # db guis
 /.pgpass
 /.pgadmin3
+/.sqldeveloper
 
 # Misc
 /.qingy
@@ -67,6 +69,9 @@
 /.pki/
 /.python-eggs/
 /.thunderbird/
+/.Skype
+/.vmrc*
+/.vmware
 
 ########################################
 # Include this						   #
