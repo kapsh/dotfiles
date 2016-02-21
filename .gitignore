@@ -28,6 +28,7 @@
 /.xdisplay
 /.java/
 /.config/*
+/.gnome
 
 # Music players data
 /.lyrics
@@ -45,6 +46,7 @@
 /.gmrun_history
 /.recently-used
 /.python_history
+/.calc_history
 
 # Games
 /.xgamelist
