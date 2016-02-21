@@ -11,3 +11,4 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 # Bold commands
 ZSH_HIGHLIGHT_STYLES[command]='fg=default,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=default,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=default,bold'
