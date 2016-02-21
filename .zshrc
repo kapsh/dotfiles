@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.zsh/third-party/oh-my-zsh
+export ZSH_TP=$HOME/.zsh/third-party
+export ZSH=$ZSH_TP/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -43,7 +44,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.zsh
+ZSH_CUSTOM=$HOME/.zsh/my
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -71,4 +72,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+# readme says it must be included in the end of file
+source $ZSH_TP/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
