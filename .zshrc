@@ -18,7 +18,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=7
+export UPDATE_ZSH_DAYS=15
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -49,7 +49,21 @@ ZSH_CUSTOM=$HOME/.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z cp dirhistory fastfile fancy-ctrl-z history jump )
+plugins=(
+	colorize
+	cp
+	dirhistory
+	encode64
+	extract
+	fancy-ctrl-z
+	fastfile
+	git
+	history
+	jump
+	rsync
+	urltools
+	z
+)
 
 # User configuration
 
