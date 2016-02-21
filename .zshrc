@@ -61,6 +61,7 @@ plugins=(
 	history
 	jump
 	rsync
+	safe-paste
 	urltools
 	z
 )
