@@ -62,7 +62,6 @@ plugins=(
 	jump
 	rsync
 	thefuck
-	safe-paste
 	urltools
 	z
 )
