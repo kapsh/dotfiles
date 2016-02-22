@@ -61,6 +61,7 @@ plugins=(
 	history
 	jump
 	rsync
+	thefuck
 	safe-paste
 	urltools
 	z
@@ -75,4 +76,6 @@ source $ZSH/oh-my-zsh.sh
 
 # readme says it must be included in the end of file
 source $ZSH_TP/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval $(thefuck --alias)
 
