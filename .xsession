@@ -15,8 +15,8 @@ parcellite &
 kbdd &
 
 # Autohiding mouse cursos
-# Bugs with awesome
-#unclutter -idle 10 &
+# Bugs with awesome with sloppy focus
+unclutter -idle 10 &
 
 # Hotkey handling
 xbindkeys &
@@ -37,6 +37,9 @@ spacefm --daemon-mode &
 
 # Compositing
 compton -c -C  -I 0.1 -O 0.1 -f -i 0.95 -b
+
+# Visual bell daemon
+xvisbell &
 
 # WM
 exec awesome
