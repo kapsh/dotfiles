@@ -28,6 +28,7 @@
 /.xdisplay
 /.java/
 /.config/*
+/.gnome
 
 # Music players data
 /.lyrics
@@ -46,6 +47,7 @@
 /.recently-used*
 /.python_history
 /.gtk-bookmarks
+/.calc_history
 
 # Games
 /.xgamelist
@@ -54,7 +56,7 @@
 # Exclude vim runtime files
 /.vim-runtime
 # and vundle-managed stuff
-/.vim/bundle
+/.vim/bundle/*
 # and files for vim-notes
 /.vim/misc/notes
 
@@ -86,4 +88,7 @@
 # XDG directories setup
 !/.config/user-dirs.conf
 !/.config/user-dirs.dirs
+
+# Include Vundle as submodule
+!/.vim/bundle/Vundle.vim
 

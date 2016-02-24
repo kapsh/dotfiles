@@ -1,17 +1,71 @@
-# Sugar for colorizing scripts output 
-# It doesn't execute anything
-# but it can be sourced
+# Sugar for colorizing scripts output
+# Usage:
+# . bash-colors
+# echo -e 'This is ${fg_green}green ${fg_bold}bold${fg_rbold}text'
+#
+# Not a bug: brokes colors in zsh when sourced so don't use it in interactive shell
 
-# Usage example: 
-# echo -e "This text is ${RED}red${NONE} and ${GREEN}green${NONE} and ${BOLD}bold${NONE} and ${UNDERLINE}underlined${NONE}."
+# Thanks to
+# http://misc.flogisoft.com/bash/tip_colors_and_formatting
 
-NONE='\033[00m'
-RED='\033[01;31m'
-GREEN='\033[01;32m'
-YELLOW='\033[01;33m'
-PURPLE='\033[01;35m'
-CYAN='\033[01;36m'
-WHITE='\033[01;37m'
-BOLD='\033[1m'
-UNDERLINE='\033[4m'
+# Formatting
+
+# Set attribute
+fg_bold='\e[1m'
+fg_dim='\e[2m'
+fg_under='\e[4m'
+fg_invert='\e[7m'
+fg_hidden='\e[8m'
+
+# Reset all attributes
+fg_none='\e[0m'
+
+# Reset one attribute
+fg_rbold='\e[21m'
+fg_rdim='\e[22m'
+fg_runder='\e[24m'
+fg_rinvert='\e[27m'
+fg_rhidden='\e[28m'
+
+# Foreground colors
+# normal
+fg_default='\e[39m'
+fg_black='\e[30m'
+fg_red='\e[31m'
+fg_green='\e[32m'
+fg_yellow='\e[33m'
+fg_blue='\e[34m'
+fg_magenta='\e[35m'
+fg_cyan='\e[36m'
+fg_lgray='\e[37m'
+# light
+fg_dgray='\e[90m'
+fg_lred='\e[91m'
+fg_lgreen='\e[92m'
+fg_lyellow='\e[93m'
+fg_lblue='\e[94m'
+fg_lmagenta='\e[95m'
+fg_lcyan='\e[96m'
+fg_white='\e[97m'
+
+# Background colors
+# normal
+bg_default='\e[49m'
+bg_black='\e[40m'
+bg_red='\e[41m'
+bg_green='\e[42m'
+bg_yellow='\e[43m'
+bg_blue='\e[44m'
+bg_magenta='\e[45m'
+bg_cyan='\e[46m'
+bg_lgray='\e[47m'
+# light
+bg_dgray='\e[100m'
+bg_lred='\e[101m'
+bg_lgreen='\e[102m'
+bg_lyellow='\e[103m'
+bg_lblue='\e[104m'
+bg_lmagenta='\e[105m'
+bg_lcyan='\e[106m'
+bg_llgray='\e[107m'
 

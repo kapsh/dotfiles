@@ -169,6 +169,7 @@ for s = 1, screen.count() do
 	tags[s] = awful.tag(tags.names, s, tags.layouts)
 end
 
+-- Big chat window for im clients
 awful.tag.setmwfact(0.8, tags[1][9])
 
 -- }}}
@@ -416,8 +417,6 @@ globalkeys = awful.util.table.join(
 			if browser_window == nil then
 				myutils.exec(cmd_browser)
 			end
-			-- Browser tag is hardcoded for now
-			awful.tag.viewonly(tags[1][4])
 		end,
 		"Browser"),
 
@@ -582,7 +581,10 @@ awful.rules.rules = {
 		buttons = clientbuttons }
 	},
 
-	{ rule = { class = "Xgame-gtk2" },
+	-- Floating windows
+	{ rule_any = { class = {
+			"Xgame-gtk2",
+		} },
 		properties = { floating = true }
 	},
 
@@ -602,7 +604,10 @@ awful.rules.rules = {
 
 	-- Set browsers to always map on tag number 4 of screen 1.
 	{ rule_any = { class = { class_browser, "firefox-bin" } },
-		properties = { tag = tags[1][4] }
+		properties = {
+			tag = tags[1][4],
+			switchtotag = true
+		}
 	},
 
 	-- xev has no WM_CLASS
