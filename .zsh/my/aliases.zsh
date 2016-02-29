@@ -17,5 +17,5 @@ alias free="free -t -m"
 
 alias myip="curl ip.appspot.com"
 
-
+[[ "$(whence colordiff)" ]] && alias diff='colordiff'
 
