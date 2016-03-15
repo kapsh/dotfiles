@@ -83,7 +83,6 @@
 
 !/.config/awesome/
 !/.config/termite/
-!/.config/htop/htoprc
 
 # XDG directories setup
 !/.config/user-dirs.conf
