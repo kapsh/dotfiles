@@ -1,4 +1,4 @@
-#!/usr/bin/bc
+#!/usr/bin/bc -l
 
 # bc integer functions I've found useful
 # while systems programming in the unix environment.
