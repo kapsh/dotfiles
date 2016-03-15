@@ -112,6 +112,10 @@ Plugin 'klen/python-mode'
 Plugin 'keepcase.vim'
 Plugin 'Shortcut-functions-for-KeepCase-script-'
 
+" Status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " Visually shows the location of marks
 " Disabled for fixing bugs
 "Plugin 'ShowMarks'
@@ -146,6 +150,9 @@ filetype plugin indent on    " required
 " Airline
 " Always show status bar for all windows
 set laststatus=2
+" Enable colors support
+set t_Co=256
+let g:airline_powerline_fonts = 1
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
