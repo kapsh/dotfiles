@@ -40,7 +40,7 @@ spacefm --daemon-mode &
 # fuck_wibox &
 
 # Compositing
-compton -c -C  -I 0.1 -O 0.1 -f -i 0.95 -b
+compton -c -C  -I 0.2 -O 0.2 -f -i 0.92 -b
 
 # Visual bell daemon
 xvisbell &
