@@ -48,6 +48,8 @@
 /.python_history
 /.gtk-bookmarks
 /.calc_history
+/.pgadmin_histoqueries
+/.psql_history
 
 # Games
 /.xgamelist
@@ -74,6 +76,8 @@
 /.Skype
 /.vmrc*
 /.vmware
+/.netbeans/
+/.gstreamer-0.10/
 
 ########################################
 # Include this						   #
