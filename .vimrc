@@ -116,6 +116,13 @@ Plugin 'Shortcut-functions-for-KeepCase-script-'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Visual indents
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Motion through CamelCaseWords and underscore_notation
+Plugin 'camelcasemotion'
+
+
 " Visually shows the location of marks
 " Disabled for fixing bugs
 "Plugin 'ShowMarks'
@@ -256,8 +263,8 @@ set foldmethod=marker
 set colorcolumn=100
 highlight ColorColumn ctermbg=7 guibg=#bebebe
 set textwidth=100
-" But don't wrap anything
-set nowrap
+" Wrap long text
+set wrap
 
 set lazyredraw  " Don't redraw the screen during macros
 
@@ -277,6 +284,10 @@ if !has("gui_running")
 	:set wildcharm=<C-Z>
 	:map <F4> :emenu <C-Z>
 endif
+
+" List mode options
+set listchars=tab:▸·,eol:¬,precedes:«,extends:»
+nmap <leader>l :set list!<CR>
 
 "}}}
 
