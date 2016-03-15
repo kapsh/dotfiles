@@ -65,4 +65,4 @@ while read line; do
 done < "$stored"
 
 echo "RDP connection to $host as $login : $password"
-rdesktop -g 1920x1055 -u "$login" -p "$password" -K -N -x 0x80 -r disk:glados="$sharepath" "$host"
+rdesktop -g 1920x1055 -u "$login" -p "$password" -K -N -x 0x80 -r clipboard:CLIPBOARD -r disk:glados="$sharepath" "$host"
