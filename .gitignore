@@ -47,6 +47,8 @@
 /.recently-used
 /.python_history
 /.calc_history
+/.pgadmin_histoqueries
+/.psql_history
 
 # Games
 /.xgamelist
@@ -69,6 +71,11 @@
 /.pki/
 /.python-eggs/
 /.thunderbird/
+/.Skype
+/.vmrc*
+/.vmware
+/.netbeans/
+/.gstreamer-0.10/
 
 ########################################
 # Include this						   #
