@@ -45,6 +45,8 @@ compton -c -C  -I 0.2 -O 0.2 -f -i 0.92 -b
 # Visual bell daemon
 xvisbell &
 
+xautolock -time 5 -locker 'xtrlock' &
+
 # WM
 exec awesome
 
