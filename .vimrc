@@ -189,6 +189,10 @@ let g:secure_modelines_leave_modeline = 1
 " Sessions
 let g:session_autoload = 'no'
 
+" Pymode
+" Disable dot completion
+let g:pymode_rope_complete_on_dot = 0
+
 "}}}
 
 " {{{ Russian layout
