@@ -356,13 +356,11 @@ globalkeys = awful.util.table.join(
 	keydoc.add({ modkey, "Shift"   }, "k", function() awful.client.swap.byidx( -1)    end,
 		"Swap current and previous windows"),
 
-	--[[
-	keydoc.add({ modkey, "Control" }, "j", function() awful.screen.focus_relative( 1) end
+	keydoc.add({ modkey, "Control" }, "j", function() awful.screen.focus_relative( 1) end,
 	"Focus next screen"),
 
 	keydoc.add({ modkey, "Control" }, "k", function() awful.screen.focus_relative(-1) end,
 	"Focus previous screen"),
-	]]
 
 	keydoc.add({ modkey,		   }, "u", awful.client.urgent.jumpto,
 		"Jump to urgent"),
@@ -476,7 +474,7 @@ clientkeys = awful.util.table.join(
 	keydoc.add({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
 		"Swap current with master"),
 
-	--	  keydoc.add({ modkey,			 }, "o",	  awful.client.movetoscreen						   ),
+    keydoc.add({ modkey,			 }, "o",	  awful.client.movetoscreen						   ),
 
 	keydoc.add({ modkey,		   }, "t",		function (c) c.ontop = not c.ontop			  end,
 		"Toggle on-top status"),
