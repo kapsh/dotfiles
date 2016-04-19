@@ -149,28 +149,45 @@ end
 -- All possible layouts defined above in all_layouts
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { "1", "2", "3", "4:www", "5:rdp", "6", "7", "8", "9:im", "0:mail" },
-    layouts = {
-        awful.layout.suit.tile, -- 1
-        awful.layout.suit.tile, -- 2
-        awful.layout.suit.tile, -- 3
-        awful.layout.suit.max,  -- 4
-        awful.layout.suit.tile, -- 5
-        awful.layout.suit.tile, -- 6
-        awful.layout.suit.tile, -- 7
-        awful.layout.suit.tile, -- 8
-        awful.layout.suit.tile, -- 9
-        awful.layout.suit.tile, -- 0
+    {
+        names = { "1", "2", "3", "4:www", "5", "6", "7", "8", "9", "0" },
+        layouts = {
+            awful.layout.suit.tile, -- 1
+            awful.layout.suit.tile, -- 2
+            awful.layout.suit.tile, -- 3
+            awful.layout.suit.max,  -- 4
+            awful.layout.suit.tile, -- 5
+            awful.layout.suit.tile, -- 6
+            awful.layout.suit.tile, -- 7
+            awful.layout.suit.tile, -- 8
+            awful.layout.suit.tile, -- 9
+            awful.layout.suit.tile, -- 0
+        }
+    },
+    {
+        names = { "1", "2", "3", "4", "5:rdp", "6", "7", "8", "9:im", "0:mail" },
+        layouts = {
+            awful.layout.suit.tile, -- 1
+            awful.layout.suit.tile, -- 2
+            awful.layout.suit.tile, -- 3
+            awful.layout.suit.max,  -- 4
+            awful.layout.suit.tile, -- 5
+            awful.layout.suit.tile, -- 6
+            awful.layout.suit.tile, -- 7
+            awful.layout.suit.tile, -- 8
+            awful.layout.suit.tile, -- 9
+            awful.layout.suit.tile, -- 0
+        }
     }
 }
 
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.names, s, tags.layouts)
+    tags[s] = awful.tag(tags[s].names, s, tags[s].layouts)
 end
 
 -- Big chat window for im clients
-awful.tag.setmwfact(0.8, tags[1][9])
+awful.tag.setmwfact(0.8, tags[2][9])
 
 -- }}}
 
@@ -616,15 +633,15 @@ awful.rules.rules = {
     },
 
     { rule = { class = "rdesktop" },
-        properties = { tag = tags[1][5] }
+        properties = { tag = tags[2][5] }
     },
 
     { rule = { class = "Skype" },
-        properties = { tag = tags[1][9] }
+        properties = { tag = tags[2][9] }
     },
 
     { rule = { class = "Thunderbird" },
-        properties = { tag = tags[1][10] }
+        properties = { tag = tags[2][10] }
     },
 
 } -- Rules end
