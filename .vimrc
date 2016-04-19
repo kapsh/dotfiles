@@ -159,6 +159,10 @@ filetype plugin indent on    " required
 set laststatus=2
 " Enable colors support
 set t_Co=256
+" Display current input language
+let g:airline_detect_iminsert = 1
+" Enable using of pretty symbols
+let g:airline_powerline_fonts = 1
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -204,14 +208,7 @@ let g:pymode_rope_autoimport_import_after_complete = 1
 " Highlight print as a function instead of keyword
 let g:pymode_syntax_print_as_function = 1
 
-" Airline
-" Display current input language
-let g:airline_detect_iminsert = 1
-" Enable using of pretty symbols
-let g:airline_powerline_fonts = 1
-
 "}}}
-
 
 "{{{ Special directories and files
 " Create backups
