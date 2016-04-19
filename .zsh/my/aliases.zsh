@@ -24,3 +24,4 @@ alias myip="curl ip.appspot.com"
 
 [[ "$(whence colordiff)" ]] && alias diff='colordiff'
 
+alias svim="vim -u ~/.svimrc"
