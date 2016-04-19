@@ -192,6 +192,18 @@ let g:session_autoload = 'no'
 " Pymode
 " Disable dot completion
 let g:pymode_rope_complete_on_dot = 0
+" Maximum line length for linter + colorcolumn position
+let g:pymode_options_max_line_length = 100
+" Always check code on :w
+let g:pymode_lint_unmodified = 1
+" Disable it in case of slow working
+let g:pymode_lint_on_fly = 0
+" rope could complete objects which have not been imported and add import for them
+" Nice idea but it freezes too often
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope_autoimport_import_after_complete = 1
+" Highlight print as a function instead of keyword
+let g:pymode_syntax_print_as_function = 1
 
 "}}}
 
