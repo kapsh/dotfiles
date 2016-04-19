@@ -1,0 +1,52 @@
+scriptencoding utf-8
+" ^^ Please leave the above line at the start of the file.
+" vim: textwidth=100: noexpandtab: tabstop=4: shiftwidth=4:
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Always show status bar for all windows
+set laststatus=2
+" Enable colors support
+set t_Co=256
+
+" No create backups
+set nobackup
+" Location for .swp files
+set directory=$HOME/.vim-runtime/swaps
+" No undo files
+set noundofile
+" viminfo location
+set viminfo+=n~/.vim-runtime/viminfo
+
+" File types and formats
+set fileencodings=utf-8,cp1251,koi8-r,cp866 " Try to detect this encodings
+set fileformats=unix,dos,mac  " Support filetypes in this order
+set endofline                 " Ensure the last line of the file has an EOL on it
+set nobomb                    " Turn off the byte order mark
+
+" Don't convert tabs to spaces
+set noexpandtab
+" Tab and indent size - 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Autoindent
+set autoindent
+set smartindent
+
+" Searching
+set wrapscan       " Searches wrap around when reaching EOF
+set incsearch      " Incremental search
+set smartcase      " Ignore the case when searching unless uppercase letters are used
+
+set backspace=indent,eol,start  " Backspace unindents, joins lines and over start of insert
+
+set nostartofline  " Stop moving the cursor to the first non-space character in lines
+
+" Space to reset search highilghts
+nmap <silent> <space> :nohlsearch<CR>
+
+" Fuck Uganda children
+set shortmess+=I
+
