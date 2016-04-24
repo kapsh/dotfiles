@@ -33,6 +33,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 
+" Bash IDE
+Plugin 'bash-support.vim'
+
 " Toggle the cursor shape in the terminal for Vim
 Plugin 'jszakmeister/vim-togglecursor'
 
@@ -334,5 +337,8 @@ set nostartofline  " Stop moving the cursor to the first non-space character in 
 
 " Space to reset search highilghts
 nmap <silent> <space> :nohlsearch<CR>
+
+" Check syntax on write for shell scripts
+autocmd BufWritePost * :!bash -n %
 
 "}}}
