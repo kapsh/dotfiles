@@ -338,4 +338,8 @@ vmap <silent> <C-^> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
 " Space to reset search highilghts
 nmap <silent> <space> :nohlsearch<CR>
 
+" Check syntax on write for shell scripts
+autocmd BufWritePost  *.bash,*.sh :!bash -n %
+autocmd BufWritePost  *.zsh :!zsh -n %
+
 "}}}
