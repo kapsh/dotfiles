@@ -39,6 +39,12 @@ set smartindent
 set wrapscan       " Searches wrap around when reaching EOF
 set incsearch      " Incremental search
 
+set smartcase      " Ignore the case when searching unless uppercase letters are used
+
+set backspace=indent,eol,start  " Backspace unindents, joins lines and over start of insert
+
+set nostartofline  " Stop moving the cursor to the first non-space character in lines
+
 " Space to reset search highilghts
 nmap <silent> <space> :nohlsearch<CR>
 
