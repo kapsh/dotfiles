@@ -33,6 +33,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 
+" Bash IDE
+Plugin 'bash-support.vim'
+
 " Toggle the cursor shape in the terminal for Vim
 Plugin 'jszakmeister/vim-togglecursor'
 
@@ -337,5 +340,8 @@ vmap <silent> <C-^> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
 
 " Space to reset search highilghts
 nmap <silent> <space> :nohlsearch<CR>
+
+" Check syntax on write for shell scripts
+autocmd BufWritePost * :!bash -n %
 
 "}}}
