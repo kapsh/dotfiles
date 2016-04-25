@@ -61,6 +61,7 @@ plugins=(
 	history
 	jump
 	rsync
+	screen
 	thefuck
 	urltools
 	z
