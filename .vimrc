@@ -1,6 +1,6 @@
 scriptencoding utf-8
 " ^^ Please leave the above line at the start of the file.
-" vim: textwidth=100: noexpandtab: tabstop=4: shiftwidth=4:
+" vim: textwidth=100: expandtab: tabstop=4: shiftwidth=4:
 
 "{{{ Vundle setup
 set nocompatible              " be iMproved, required
@@ -283,8 +283,8 @@ nmap <leader>l :set list!<CR>
 
 "{{{ Edit options
 
-" Don't convert tabs to spaces
-set noexpandtab
+" Convert tabs to spaces
+set expandtab
 " Tab and indent size - 4 spaces
 set shiftwidth=4
 set tabstop=4
