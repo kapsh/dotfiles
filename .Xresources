@@ -1,11 +1,11 @@
 ! Xft.dpi:            121 
 
-XTerm*background:	#f5fffc
-XTerm*foreground:	black
-XTerm*faceName:		xft:DejaVu Sans Mono:size=10
+XTerm*background:   #f5fffc
+XTerm*foreground:   black
+XTerm*faceName:     xft:DejaVu Sans Mono:size=10
 XTerm*faceNameDoublesize:   xft:DejaVu Sans Mono:style=Regular
 XTerm*utf8:         2
-!XTerm*faceSize:		10
+!XTerm*faceSize:        10
 XTerm*metaSendsEscape:  true
 XTerm*jumpScroll:   true
 XTerm*saveLines:    10000
