@@ -271,11 +271,11 @@ highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=G
 
 " F4 for show menu
 if !has("gui_running")
-	:source $VIMRUNTIME/menu.vim
-	:set wildmenu
-	:set cpoptions-=<
-	:set wildcharm=<C-Z>
-	:map <F4> :emenu <C-Z>
+    :source $VIMRUNTIME/menu.vim
+    :set wildmenu
+    :set cpoptions-=<
+    :set wildcharm=<C-Z>
+    :map <F4> :emenu <C-Z>
 endif
 
 " List mode options
@@ -286,8 +286,8 @@ nmap <leader>l :set list!<CR>
 
 "{{{ Edit options
 
-" Don't convert tabs to spaces
-set noexpandtab
+" Convert tabs to spaces
+set expandtab
 " Tab and indent size - 4 spaces
 set shiftwidth=4
 set tabstop=4
@@ -316,11 +316,11 @@ set imsearch=0
 
 " For some reason doesn't set cursor color but without this <C-6> doesn't switch input language.
 function MyKeyMapHighlight()
-	if &iminsert == 0
-		hi lCursor ctermbg=DarkBlue guibg=DarkBlue
-	else
-		hi lCursor ctermbg=DarkGreen guibg=DarkGreen
-	endif
+    if &iminsert == 0
+        hi lCursor ctermbg=DarkBlue guibg=DarkBlue
+    else
+        hi lCursor ctermbg=DarkGreen guibg=DarkGreen
+    endif
 endfunction
 
 " Init colors on start
