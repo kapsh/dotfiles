@@ -51,19 +51,19 @@ ZSH_CUSTOM=$HOME/.zsh/my
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	colorize
-	cp
-	dirhistory
-	encode64
-	extract
-	fancy-ctrl-z
-	fastfile
-	history
-	jump
-	rsync
-	thefuck
-	urltools
-	z
+    colorize
+    cp
+    dirhistory
+    encode64
+    extract
+    fancy-ctrl-z
+    fastfile
+    history
+    jump
+    rsync
+    thefuck
+    urltools
+    z
 )
 
 # User configuration
