@@ -345,7 +345,7 @@ vmap <silent> <C-^> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
 nmap <silent> <space> :nohlsearch<CR>
 
 " Check syntax on write for shell scripts
-autocmd BufWritePost  *.bash,*.sh :!bash -n %
+autocmd BufWritePost  *.bash,*.sh,*.ebuild :!bash -n %
 autocmd BufWritePost  *.zsh :!zsh -n %
 
 "}}}
