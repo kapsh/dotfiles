@@ -33,6 +33,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 
+" Bash IDE
+Plugin 'bash-support.vim'
+
 " Toggle the cursor shape in the terminal for Vim
 Plugin 'jszakmeister/vim-togglecursor'
 
@@ -268,11 +271,11 @@ highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=G
 
 " F4 for show menu
 if !has("gui_running")
-	:source $VIMRUNTIME/menu.vim
-	:set wildmenu
-	:set cpoptions-=<
-	:set wildcharm=<C-Z>
-	:map <F4> :emenu <C-Z>
+    :source $VIMRUNTIME/menu.vim
+    :set wildmenu
+    :set cpoptions-=<
+    :set wildcharm=<C-Z>
+    :map <F4> :emenu <C-Z>
 endif
 
 " List mode options
@@ -313,11 +316,11 @@ set imsearch=0
 
 " For some reason doesn't set cursor color but without this <C-6> doesn't switch input language.
 function MyKeyMapHighlight()
-	if &iminsert == 0
-		hi lCursor ctermbg=DarkBlue guibg=DarkBlue
-	else
-		hi lCursor ctermbg=DarkGreen guibg=DarkGreen
-	endif
+    if &iminsert == 0
+        hi lCursor ctermbg=DarkBlue guibg=DarkBlue
+    else
+        hi lCursor ctermbg=DarkGreen guibg=DarkGreen
+    endif
 endfunction
 
 " Init colors on start
@@ -339,7 +342,7 @@ vmap <silent> <C-^> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
 nmap <silent> <space> :nohlsearch<CR>
 
 " Check syntax on write for shell scripts
-autocmd BufWritePost  *.bash,*.sh :!bash -n %
+autocmd BufWritePost  *.bash,*.sh,*.ebuild :!bash -n %
 autocmd BufWritePost  *.zsh :!zsh -n %
 
 "}}}

@@ -4,18 +4,18 @@ display=":42" # I hope this display is free
 ssize="1024x768"
 
 if [ -n "$1" ]; then
-	# Use config provided in parameter
+    # Use config provided in parameter
     config="$1"
 else
-	# Try to find my usual test config
-	test_config="$HOME/.config/awesome/test.lua"
-	if [ -f "$test_config" ]; then
-		config="$test_config"
-	else
-		# Fallback
-		echo "$test_config doesn't exist, assuming default"
-		config="$HOME/.config/awesome/rc.lua"
-	fi
+    # Try to find my usual test config
+    test_config="$HOME/.config/awesome/test.lua"
+    if [ -f "$test_config" ]; then
+        config="$test_config"
+    else
+        # Fallback
+        echo "$test_config doesn't exist, assuming default"
+        config="$HOME/.config/awesome/rc.lua"
+    fi
 fi
 
 Xephyr "$display" -screen "$ssize" &
@@ -27,11 +27,11 @@ echo "Using $config"
 awesome -k "$config"
 
 if [ "$?" -eq 1 ]; then
-	echo "Syntax check failed, exiting"
-	kill "$xephyr_pid"
-	exit 1
+    echo "Syntax check failed, exiting"
+    kill "$xephyr_pid"
+    exit 1
 else
-	awesome -c "$config" &
-	exit 0
+    awesome -c "$config" &
+    exit 0
 fi
 

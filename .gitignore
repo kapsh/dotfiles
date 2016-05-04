@@ -3,7 +3,7 @@
 !/bin
 
 ########################################
-#	Ignore							   #
+#   Ignore                             #
 ########################################
 
 # Shell stuff
@@ -80,7 +80,7 @@
 /.gstreamer-0.10/
 
 ########################################
-# Include this						   #
+# Include this                         #
 ########################################
 
 # .config is full of bloatware, but contains some manually created files. Add them.
