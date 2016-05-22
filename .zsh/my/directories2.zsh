@@ -15,6 +15,7 @@ function mkcd() {
         echo 'mkcd: missing name'
     fi
 }
+compdef mkcd=mkdir
 
 function cdls() {
     if [[ -n "$1" ]]; then
@@ -23,3 +24,4 @@ function cdls() {
         echo 'cdls: missing name'
     fi
 }
+compdef cdls=cd
