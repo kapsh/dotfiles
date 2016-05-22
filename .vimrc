@@ -206,6 +206,8 @@ let g:pymode_rope_autoimport = 0
 let g:pymode_rope_autoimport_import_after_complete = 1
 " Highlight print as a function instead of keyword
 let g:pymode_syntax_print_as_function = 1
+" Hangs fix?
+let g:pymode_rope_lookup_project = 0
 
 " Airline
 " Display current input language
