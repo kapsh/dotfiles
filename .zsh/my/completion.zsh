@@ -5,7 +5,8 @@ zstyle ':completion:*:processes' insert-ids menu yes select
 zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"'
 zstyle ':completion:*:processes' sort false
 
-# Completions for cave-wrapper
+# Completions for cave wrappers
+compdef _cave_cmd_search cave-search
 compdef _cave_cmd_resume cave-resume
 compdef _cave_cmd_resolve cave-resolve
 compdef _cave_cmd_resolve cave-remove
