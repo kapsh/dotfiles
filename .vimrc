@@ -123,8 +123,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Motion through CamelCaseWords and underscore_notation
-Plugin 'camelcasemotion'
-
+Plugin 'bkad/CamelCaseMotion'
 
 " Visually shows the location of marks
 " Disabled for fixing bugs
@@ -134,9 +133,6 @@ Plugin 'camelcasemotion'
 " Disabled until figuring out how it works
 "Plugin 'scrooloose/syntastic'
 
-" Tab completion inside searching
-" Disabled because breaks up arrow in command line
-"Plugin 'SearchComplete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -213,6 +209,9 @@ let g:pymode_syntax_print_as_function = 1
 " Hangs fix?
 let g:pymode_rope_lookup_project = 0
 
+" CamelCaseMotion
+call camelcasemotion#CreateMotionMappings('<leader>')
+
 "}}}
 
 "{{{ Special directories and files
@@ -232,9 +231,9 @@ set viminfo+=n~/.vim-runtime/viminfo
 
 " File types and formats
 set fileencodings=utf-8,cp1251,koi8-r,cp866 " Try to detect this encodings
-set fileformats=unix,dos,mac  " Support filetypes in this order
-set endofline                 " Ensure the last line of the file has an EOL on it
-set nobomb                    " Turn off the byte order mark
+set fileformats=unix,dos,mac                " Support filetypes in this order
+set endofline                               " Ensure the last line of the file has an EOL on it
+set nobomb                                  " Turn off the byte order mark
 
 " Strip trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -346,5 +345,8 @@ nmap <silent> <space> :nohlsearch<CR>
 " Check syntax on write for shell scripts
 autocmd BufWritePost  *.bash,*.sh,*.ebuild :!bash -n %
 autocmd BufWritePost  *.zsh :!zsh -n %
+
+" Maximum number of tabs on opening
+set tabpagemax=100
 
 "}}}
