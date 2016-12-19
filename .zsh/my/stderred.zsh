@@ -6,4 +6,4 @@ red=$(tput setaf 1)
 export STDERRED_ESC_CODE=$(echo -e $italic$red)
 unset bold red italic
 
-export STDERRED_BLACKLIST="^(screen|wget|bash|test.*)$"
+export STDERRED_BLACKLIST="^(screen|wget|bash|python.*|test.*)$"
