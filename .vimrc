@@ -230,7 +230,7 @@ set viminfo+=n~/.vim-runtime/viminfo
 "{{{ Opening and saving options
 
 " File types and formats
-set fileencodings=utf-8,cp1251,koi8-r,cp866 " Try to detect this encodings
+set fileencodings=ucs-bom,utf-8,utf-16,cp1251 " Try to detect this encodings
 set fileformats=unix,dos,mac                " Support filetypes in this order
 set endofline                               " Ensure the last line of the file has an EOL on it
 set nobomb                                  " Turn off the byte order mark
