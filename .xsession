@@ -5,8 +5,6 @@ echo "$DISPLAY" > "$HOME"/.xdisplay &
 # if wasm't set automatically
 xrdb -merge .Xresources
 
-thunderbird &
-
 # Clipboard manager
 parcellite &
 
