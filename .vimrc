@@ -1,6 +1,6 @@
 scriptencoding utf-8
 " ^^ Please leave the above line at the start of the file.
-" vim: textwidth=100: noexpandtab: tabstop=4: shiftwidth=4:
+" vim: textwidth=100: expandtab: tabstop=4: shiftwidth=4:
 
 "{{{ Vundle setup
 set nocompatible              " be iMproved, required
@@ -123,8 +123,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Motion through CamelCaseWords and underscore_notation
-Plugin 'camelcasemotion'
-
+Plugin 'bkad/CamelCaseMotion'
 
 " Visually shows the location of marks
 " Disabled for fixing bugs
@@ -134,9 +133,6 @@ Plugin 'camelcasemotion'
 " Disabled until figuring out how it works
 "Plugin 'scrooloose/syntastic'
 
-" Tab completion inside searching
-" Disabled because breaks up arrow in command line
-"Plugin 'SearchComplete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -162,6 +158,10 @@ filetype plugin indent on    " required
 set laststatus=2
 " Enable colors support
 set t_Co=256
+" Display current input language
+let g:airline_detect_iminsert = 1
+" Enable using of pretty symbols
+let g:airline_powerline_fonts = 1
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -209,14 +209,10 @@ let g:pymode_syntax_print_as_function = 1
 " Hangs fix?
 let g:pymode_rope_lookup_project = 0
 
-" Airline
-" Display current input language
-let g:airline_detect_iminsert = 1
-" Enable using of pretty symbols
-let g:airline_powerline_fonts = 1
+" CamelCaseMotion
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 "}}}
-
 
 "{{{ Special directories and files
 " Create backups
@@ -234,10 +230,10 @@ set viminfo+=n~/.vim-runtime/viminfo
 "{{{ Opening and saving options
 
 " File types and formats
-set fileencodings=utf-8,cp1251,koi8-r,cp866 " Try to detect this encodings
-set fileformats=unix,dos,mac  " Support filetypes in this order
-set endofline                 " Ensure the last line of the file has an EOL on it
-set nobomb                    " Turn off the byte order mark
+set fileencodings=ucs-bom,utf-8,cp1251 " Try to detect this encodings
+set fileformats=unix,dos,mac                " Support filetypes in this order
+set endofline                               " Ensure the last line of the file has an EOL on it
+set nobomb                                  " Turn off the byte order mark
 
 " Strip trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -349,5 +345,8 @@ nmap <silent> <space> :nohlsearch<CR>
 " Check syntax on write for shell scripts
 autocmd BufWritePost  *.bash,*.sh,*.ebuild :!bash -n %
 autocmd BufWritePost  *.zsh :!zsh -n %
+
+" Maximum number of tabs on opening
+set tabpagemax=100
 
 "}}}

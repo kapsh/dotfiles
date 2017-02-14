@@ -61,7 +61,9 @@ plugins=(
     git-extras
     history
     jump
+    pip
     rsync
+    screen
     thefuck
     urltools
     z

@@ -44,8 +44,9 @@
 /.lesshst
 /.gnuplot_history
 /.gmrun_history
-/.recently-used
+/.recently-used*
 /.python_history
+/.gtk-bookmarks
 /.calc_history
 /.pgadmin_histoqueries
 /.psql_history
@@ -64,6 +65,7 @@
 # db guis
 /.pgpass
 /.pgadmin3
+/.sqldeveloper
 
 # Misc
 /.qingy
@@ -76,6 +78,11 @@
 /.vmware
 /.netbeans/
 /.gstreamer-0.10/
+
+# IDE
+/.PyCharm*
+/.Idea*
+/.IntelliJ*
 
 ########################################
 # Include this                         #
