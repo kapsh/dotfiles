@@ -58,7 +58,6 @@ plugins=(
     extract
     fancy-ctrl-z
     fastfile
-    git-extras
     history
     jump
     pip

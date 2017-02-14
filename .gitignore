@@ -1,102 +1,25 @@
-# Ignore all except dotfiles and ~/bin
-/[^.]*
+# Ignore ALL except ~/bin
+/*
 !/bin
 
-########################################
-#   Ignore                             #
-########################################
+# Git configuration
+/.gitconfig
+/.gitignore
+/.gitmodules
 
-# Shell stuff
-/.bash_history
-/.fastfile
-/.oh-my-zsh
-/.z
-.zcompdump*
-/.zsh-update
-/.zsh_history
-
-# Very private
-/.ssh/
-
-# wow such desktop much shit
-/.cache/
-/.dbus/
-/.icons/
-/.local/
-/.thumbnails/
-/.Xauthority
-/.xdisplay
-/.java/
-/.config/*
-/.gnome
-
-# Music players data
-/.lyrics
-/.covers
-
-# Browsers data
-/.links
-/.w3m
-/.mozilla
-/.macromedia
-
-# History files
-/.lesshst
-/.gnuplot_history
-/.gmrun_history
-/.recently-used*
-/.python_history
-/.gtk-bookmarks
-/.calc_history
-/.pgadmin_histoqueries
-/.psql_history
-
-# Games
-/.xgamelist
-/.openarena/
-
-# Exclude vim runtime files
-/.vim-runtime
-# and vundle-managed stuff
-/.vim/bundle/*
-# and files for vim-notes
-/.vim/misc/notes
-
-# db guis
-/.pgpass
-/.pgadmin3
-/.sqldeveloper
-
-# Misc
-/.qingy
-/.wget-hsts
-/.pki/
-/.python-eggs/
-/.thunderbird/
-/.Skype
-/.vmrc*
-/.vmware
-/.netbeans/
-/.gstreamer-0.10/
-
-# IDE
-/.PyCharm*
-/.Idea*
-/.IntelliJ*
-
-########################################
-# Include this                         #
-########################################
-
-# .config is full of bloatware, but contains some manually created files. Add them.
-
-!/.config/awesome/
-!/.config/termite/
-
-# XDG directories setup
-!/.config/user-dirs.conf
-!/.config/user-dirs.dirs
-
-# Include Vundle as submodule
-!/.vim/bundle/Vundle.vim
-
+# and add only this dotfiles
+/.XCompose
+/.Xresources
+/.config/awesome/
+/.config/termite/
+/.config/user-dirs.conf
+/.config/user-dirs.dirs
+/.conky/conkybar
+/.gmrunrc
+/.svimrc
+/.tmux.conf
+/.vimrc
+/.xbindkeysrc
+/.xsession
+/.zsh/my
+/.zshrc
