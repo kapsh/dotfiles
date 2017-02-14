@@ -60,7 +60,9 @@ plugins=(
     fastfile
     history
     jump
+    pip
     rsync
+    screen
     thefuck
     urltools
     z
