@@ -31,3 +31,14 @@
 /.zsh/*
 !/.zsh/my
 !/.zshrc
+
+# IPython: include only config.py and startup scripts from profile dirs
+!/.python_startup.py
+!/.ipython
+/.ipython/*
+!/.ipython/profile_*/
+/.ipython/profile_*/*
+!/.ipython/profile_*/ipython_config.py
+!/.ipython/profile_*/startup/
+/.ipython/profile_*/startup/*
+!/.ipython/profile_*/startup/*.py
