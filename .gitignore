@@ -3,23 +3,31 @@
 !/bin
 
 # Git configuration
-/.gitconfig
-/.gitignore
-/.gitmodules
+!/.gitconfig
+!/.gitignore
+!/.gitmodules
 
 # and add only this dotfiles
-/.XCompose
-/.Xresources
-/.config/awesome/
-/.config/termite/
-/.config/user-dirs.conf
-/.config/user-dirs.dirs
-/.conky/conkybar
-/.gmrunrc
-/.svimrc
-/.tmux.conf
-/.vimrc
-/.xbindkeysrc
-/.xsession
-/.zsh/my
-/.zshrc
+!/.XCompose
+!/.Xresources
+!/.xbindkeysrc
+!/.xsession
+
+!/.config/
+/.config/*
+!/.config/awesome
+!/.config/termite/config
+!/.config/user-dirs.conf
+!/.config/user-dirs.dirs
+
+!/.conky/conkybar
+
+!/.gmrunrc
+!/.svimrc
+!/.tmux.conf
+!/.vimrc
+
+!/.zsh
+/.zsh/*
+!/.zsh/my
+!/.zshrc
