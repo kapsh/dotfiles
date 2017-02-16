@@ -42,7 +42,7 @@ end
 
 --  Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "sky/theme.lua")
+beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
@@ -189,7 +189,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[2])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -258,8 +258,6 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "s", hotkeys_popup.sho
             awful.client.focus.byidx(-1)
         end,
         { description = "focus previous by index", group = "client" }),
-    awful.key({ modkey, }, "w", function() mymainmenu:show() end,
-        { description = "show main menu", group = "awesome" }),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
@@ -318,8 +316,8 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "s", hotkeys_popup.sho
         { description = "restore minimized", group = "client" }),
 
     -- Prompt
-    awful.key({ modkey }, "r", function() awful.screen.focused().mypromptbox:run() end,
-        { description = "run prompt", group = "launcher" }),
+    awful.key({ modkey }, "r", function() awful.spawn("rofi -show run") end,
+        { description = "run rofi", group = "launcher" }),
 
     awful.key({ modkey }, "x",
         function()
@@ -370,7 +368,7 @@ clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 10 do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
