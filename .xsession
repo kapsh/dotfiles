@@ -32,6 +32,10 @@ xvisbell &
 
 xautolock -time 10 -locker 'xtrlock' &
 
+# Messaging
+thunderbird &
+hipchat &
+
 # WM
 exec awesome
 
