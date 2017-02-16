@@ -19,6 +19,7 @@
 !/.config/termite/config
 !/.config/user-dirs.conf
 !/.config/user-dirs.dirs
+!/.config/rofi/
 
 !/.conky/conkybar
 
