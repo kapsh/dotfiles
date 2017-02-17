@@ -1,0 +1,25 @@
+#include "/usr/share/rofi/themes//Arc.theme"
+
+rofi.font:                           mono 10
+rofi.fake-transparency:              true
+
+! list of all enabled modes is shown at the bottom
+rofi.sidebar-mode:                   true
+rofi.modi:                           window,run,ssh
+
+! Position on screen
+! 1 2 3
+! 8 0 4
+! 7 6 5
+rofi.location:                       0
+
+! "Monitor id to show on"
+rofi.m:                              -5
+
+! "Click outside the window to exit"
+rofi.click-to-exit:                  true
+
+! "Set the matching algorithm. (normal, regex, glob, fuzzy)"
+rofi.matching:                       normal
+
+! vim: filetype=xdefaults

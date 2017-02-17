@@ -2,6 +2,8 @@
 
 echo "$DISPLAY" > "$HOME"/.xdisplay &
 
+pulseaudio --start &
+
 # if wasm't set automatically
 xrdb -merge .Xresources
 
