@@ -38,7 +38,7 @@ do
         in_error = false
     end)
 end
--- 
+--
 
 --  Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -78,7 +78,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
--- 
+--
 
 --  Helper functions
 local function client_menu_toggle_fn()
@@ -94,7 +94,7 @@ local function client_menu_toggle_fn()
     end
 end
 
--- 
+--
 
 --  Menu
 -- Create a launcher widget and a main menu
@@ -120,14 +120,14 @@ mylauncher = awful.widget.launcher({
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- 
+--
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 --  Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" <b>%a, %d %b, %H:%M:%S</b> ", 1)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(awful.button({}, 1, function(t) t:view_only() end),
@@ -230,13 +230,13 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
--- 
+--
 
 --  Mouse bindings
 root.buttons(awful.util.table.join(awful.button({}, 3, function() mymainmenu:toggle() end),
     awful.button({}, 4, awful.tag.viewnext),
     awful.button({}, 5, awful.tag.viewprev)))
--- 
+--
 
 --  Key bindings
 globalkeys = awful.util.table.join(awful.key({ modkey, }, "s", hotkeys_popup.show_help,
@@ -420,7 +420,7 @@ clientbuttons = awful.util.table.join(awful.button({}, 1, function(c) client.foc
 
 -- Set keys
 root.keys(globalkeys)
--- 
+--
 
 --  Rules
 -- Rules to apply to new clients (through the "manage" signal).
@@ -483,7 +483,7 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 }
--- 
+--
 
 --  Signals
 -- Signal function to execute when a new client appears.
