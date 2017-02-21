@@ -30,7 +30,7 @@
 
 ## lines of code to run at IPython startup.
 c.InteractiveShellApp.exec_lines = [
-    'from __future__ import division'
+    'from __future__ import division, print_function'
 ]
 
 ## A list of dotted module names of IPython extensions to load.
