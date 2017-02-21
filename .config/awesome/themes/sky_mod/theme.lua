@@ -4,6 +4,8 @@
 -------------------------------
 -- If you want SVGs and extras, get them from garoth.com/awesome/sky-theme
 
+local awful = require("awful")
+
 -- BASICS
 local theme = {}
 theme.font          = "sans 10"
@@ -51,7 +53,15 @@ theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squaref
 theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
 
 -- MISC
-theme.wallpaper             = "/usr/share/awesome/themes/sky/sky-background.png"
+theme.wallpaper             = function(s)
+        default_wp = "/usr/share/awesome/themes/sky/sky-background.png"
+        custom_wp = awful.util.get_xdg_config_home() .. "wallpaper"
+        if awful.util.file_readable(custom_wp) then
+            return custom_wp
+        else
+            return default_wp
+        end
+    end
 theme.taglist_squares       = "true"
 theme.titlebar_close_button = "true"
 theme.menu_height           = 20
