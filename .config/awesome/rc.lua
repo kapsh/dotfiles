@@ -38,15 +38,13 @@ do
         in_error = false
     end)
 end
---
 
---  Variable definitions
+-- Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
---editor = os.getenv("EDITOR") or "nano"
 editor_cmd = "gvim"
 
 -- Set true for remember why I disabled it
@@ -54,9 +52,6 @@ local sloppy_focus = false
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -78,7 +73,6 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
---
 
 --  Helper functions
 local function client_menu_toggle_fn()
@@ -94,7 +88,6 @@ local function client_menu_toggle_fn()
     end
 end
 
---
 
 --  Menu
 -- Create a launcher widget and a main menu
@@ -120,7 +113,6 @@ mylauncher = awful.widget.launcher({
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
---
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
@@ -230,16 +222,14 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
---
 
 --  Mouse bindings
 root.buttons(awful.util.table.join(awful.button({}, 3, function() mymainmenu:toggle() end),
     awful.button({}, 4, awful.tag.viewnext),
     awful.button({}, 5, awful.tag.viewprev)))
---
 
 --  Key bindings
-globalkeys = awful.util.table.join(awful.key({ modkey, }, "s", hotkeys_popup.show_help,
+globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.show_help,
     { description = "show help", group = "awesome" }),
     awful.key({ modkey, }, "Left", awful.tag.viewprev,
         { description = "view previous", group = "tag" }),
@@ -371,7 +361,7 @@ clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
+-- This should map on the top row of your keyboard, usually 1 to 0.
 for i = 1, 10 do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
@@ -424,7 +414,6 @@ clientbuttons = awful.util.table.join(awful.button({}, 1, function(c) client.foc
 
 -- Set keys
 root.keys(globalkeys)
---
 
 --  Rules
 -- Rules to apply to new clients (through the "manage" signal).
@@ -449,18 +438,12 @@ awful.rules.rules = {
         rule_any = {
             instance = {
                 "DTA", -- Firefox addon DownThemAll.
-                "copyq", -- Includes session name in class.
             },
             class = {
-                "Arandr",
                 "Gpick",
-                "Kruler",
-                "MessageWin", -- kalarm.
                 "Sxiv",
                 "Wpa_gui",
                 "pinentry",
-                "veromix",
-                "xtightvncviewer"
             },
             name = {
                 "Event Tester", -- xev.
@@ -483,11 +466,7 @@ awful.rules.rules = {
         }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
---
 
 --  Signals
 -- Signal function to execute when a new client appears.
