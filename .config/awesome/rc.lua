@@ -47,6 +47,9 @@ beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 terminal = "termite"
 editor_cmd = "gvim"
 
+calc_class = "ipython-term"
+calc_cmd = terminal .. " --class=" .. calc_class .. " -t 'Calculator' -e 'ipython'"
+
 -- Set true for remember why I disabled it
 local sloppy_focus = false
 
@@ -313,6 +316,27 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
     awful.key({ modkey }, "F12", function() awful.spawn("xtrlock") end,
         { description = "lock screen", group = "launcher" }),
 
+    -- Calculator
+    awful.key({ modkey }, "a",
+        function()
+            -- Find running calculator window and bring it to front.
+            -- awful.client.run_or_raise could be used, but it will jump to it's tag.
+            local find_calc = function(c)
+                return awful.rules.match(c, { class = calc_class })
+            end
+            for c in awful.client.iterate(find_calc) do
+                local s = awful.screen.focused()
+                c:move_to_screen(s)
+                c:move_to_tag(s.selected_tag)
+                c:raise()
+                found = true
+            end
+            if not found then
+                awful.spawn(calc_cmd)
+            end
+        end,
+        { description = "run calculator", group = "launcher" }),
+
     awful.key({ modkey }, "x",
         function()
             awful.prompt.run {
@@ -444,6 +468,7 @@ awful.rules.rules = {
                 "Sxiv",
                 "Wpa_gui",
                 "pinentry",
+                calc_class,
             },
             name = {
                 "Event Tester", -- xev.
@@ -459,7 +484,10 @@ awful.rules.rules = {
     -- Add titlebars to some clients
     {
         rule_any = {
-            class = { "Termite" }
+            class = {
+                "Termite",
+                calc_class,
+            }
         },
         properties = {
             titlebars_enabled = true
