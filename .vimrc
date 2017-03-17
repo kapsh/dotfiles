@@ -69,26 +69,14 @@ Plugin 'sjl/gundo.vim'
 " Securing vim modelines
 Plugin 'ciaranm/securemodelines'
 
-" quoting/parenthesizing made simple
-Plugin 'tpope/vim-surround'
-
 " Maximize/restore buffers
 Plugin 'ZoomWin'
 
 " ansi escape sequences concealed, but highlighted as specified.
 Plugin 'powerman/vim-plugin-AnsiEsc'
 
-" run interactive programs inside a Vim buffer
-Plugin 'Conque-Shell'
-
 " automatically detecting indent settings
 Plugin 'ciaranm/detectindent'
-
-" Easy note taking in Vim
-Plugin 'xolox/vim-notes'
-
-" Runtime for vim-notes
-Plugin 'xolox/vim-misc'
 
 " Quickly create lists of incremented values
 Plugin 'vim-scripts/increment.vim--Natter'
@@ -108,30 +96,12 @@ Plugin 'vim-scripts/MultipleSearch'
 " transparent pasting into vim. (i.e. no more :set paste!)
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
-" Python IDE
-Plugin 'klen/python-mode'
-
-" Replace with preserving case
-Plugin 'keepcase.vim'
-Plugin 'Shortcut-functions-for-KeepCase-script-'
-
 " Status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Visual indents
-Plugin 'nathanaelkane/vim-indent-guides'
-
 " Motion through CamelCaseWords and underscore_notation
 Plugin 'bkad/CamelCaseMotion'
-
-" Visually shows the location of marks
-" Disabled for fixing bugs
-"Plugin 'ShowMarks'
-
-" Syntax checking hacks for vim
-" Disabled until figuring out how it works
-"Plugin 'scrooloose/syntastic'
 
 
 " All of your Plugins must be added before the following line
@@ -187,27 +157,6 @@ let g:vim_json_syntax_conceal = 0
 " Secure modelines
 " Disabled for now
 let g:secure_modelines_leave_modeline = 1
-
-" Sessions
-let g:session_autoload = 'no'
-
-" Pymode
-" Disable dot completion
-let g:pymode_rope_complete_on_dot = 0
-" Maximum line length for linter + colorcolumn position
-let g:pymode_options_max_line_length = 100
-" Always check code on :w
-let g:pymode_lint_unmodified = 1
-" Disable it in case of slow working
-let g:pymode_lint_on_fly = 0
-" rope could complete objects which have not been imported and add import for them
-" Nice idea but it freezes too often
-let g:pymode_rope_autoimport = 0
-let g:pymode_rope_autoimport_import_after_complete = 1
-" Highlight print as a function instead of keyword
-let g:pymode_syntax_print_as_function = 1
-" Hangs fix?
-let g:pymode_rope_lookup_project = 0
 
 " CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('<leader>')
