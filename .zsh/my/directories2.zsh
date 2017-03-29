@@ -16,6 +16,7 @@ function mkcd() {
     fi
 }
 compdef mkcd=mkdir
+alias mkcd='nocorrect mkcd'
 
 function cdls() {
     if [[ -n "$1" ]]; then

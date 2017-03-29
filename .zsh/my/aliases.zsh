@@ -33,3 +33,4 @@ if [[ "$ENABLE_CORRECTION" == "true" ]]; then
     alias git='nocorrect git'
 fi
 
+alias scp='scp -r'
