@@ -78,9 +78,6 @@ source $ZSH/oh-my-zsh.sh
 
 # readme says it must be included in the end of file
 source $ZSH_TP/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# and auto-fu requires to be sourced after syntax-highlighting
-auto_fu_init="/usr/share/zsh/site-contrib/auto-fu.zsh/init.zsh"  # maybe path detection could be better
-[[ -e "${auto_fu_init}" ]] && source "${auto_fu_init}"
 
 eval $(thefuck --alias)
 
