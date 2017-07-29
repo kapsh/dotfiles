@@ -328,6 +328,7 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
                 local s = awful.screen.focused()
                 c:move_to_screen(s)
                 c:move_to_tag(s.selected_tag)
+                client.focus = c
                 c:raise()
                 found = true
             end
