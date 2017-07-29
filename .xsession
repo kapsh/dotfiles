@@ -4,14 +4,16 @@ echo "$DISPLAY" > "$HOME"/.xdisplay &
 
 pulseaudio --start &
 
+$(eval ssh-agent)
+
 # if wasm't set automatically
 xrdb -merge .Xresources
 
 # Clipboard manager
 parcellite &
 
-# Per-window layout daemon
-kbdd &
+# Set layout
+myxkbmap && kbdd &
 
 # Autohiding mouse cursos
 # Bugs with awesome with sloppy focus
