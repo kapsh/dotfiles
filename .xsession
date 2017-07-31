@@ -4,7 +4,7 @@ echo "$DISPLAY" > "$HOME"/.xdisplay &
 
 pulseaudio --start &
 
-$(eval ssh-agent)
+eval $(ssh-agent)
 
 # if wasm't set automatically
 xrdb -merge .Xresources
