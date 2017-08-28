@@ -36,6 +36,9 @@ xvisbell &
 
 xautolock -time 10 -locker 'xtrlock' &
 
+xset r rate 300
+xset m 4
+
 # WM
 exec awesome
 
