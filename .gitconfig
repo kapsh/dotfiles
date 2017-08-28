@@ -1,13 +1,30 @@
 [user]
     email = kapsh@kap.sh
     name = kapsh
+
 [push]
     default = simple
+
 [alias]
-# Stolen from
-# https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
-    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(black)%s%C(reset) %C(dim white)- %an%C(reset)'
+
+    # Shortcuts for simple commands
     co = checkout
     st = status -sb
     commend = commit --amend
+    staged = diff --staged
+
+    # Stolen from https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(black)%s%C(reset) %C(dim white)- %an%C(reset)'
+
+    # Digest on all local branches
     branches = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
+    # Rollback commit but keep changes
+    undo = reset --mixed HEAD~1
+
+    # Remove specified file from staged changes
+    unstage = reset HEAD --
+
+    # Update master and rebase on it
+    shift = !git fetch origin master && git rebase master
+
