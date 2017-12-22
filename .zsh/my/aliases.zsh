@@ -34,3 +34,6 @@ if [[ "$ENABLE_CORRECTION" == "true" ]]; then
 fi
 
 alias scp='scp -r'
+
+alias play='ansible-playbook'
+compdef _ansible-playbook play
