@@ -33,9 +33,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 
-" Bash IDE
-Plugin 'bash-support.vim'
-
 " Toggle the cursor shape in the terminal for Vim
 Plugin 'jszakmeister/vim-togglecursor'
 
@@ -54,9 +51,6 @@ Plugin 'scrooloose/nerdtree'
 " A better JSON for Vim
 Plugin 'elzr/vim-json'
 
-" Open files without having to supply a path
-Plugin 'yokomizor/LocateOpen'
-
 " Next generation completion framework after neocomplcache
 Plugin 'Shougo/neocomplete.vim'
 
@@ -66,26 +60,14 @@ Plugin 'junegunn/vim-easy-align'
 " Undo tree
 Plugin 'sjl/gundo.vim'
 
-" Securing vim modelines
-Plugin 'ciaranm/securemodelines'
-
-" Maximize/restore buffers
-Plugin 'ZoomWin'
-
 " ansi escape sequences concealed, but highlighted as specified.
 Plugin 'powerman/vim-plugin-AnsiEsc'
 
 " automatically detecting indent settings
 Plugin 'ciaranm/detectindent'
 
-" Quickly create lists of incremented values
-Plugin 'vim-scripts/increment.vim--Natter'
-
 " Show differences for recovered files
 Plugin 'chrisbra/Recover.vim'
-
-" Buffer browser
-Plugin 'vim-scripts/bufexplorer.zip'
 
 " Yank and delete history
 Plugin 'vim-scripts/YankRing.vim'
@@ -99,9 +81,6 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 " Status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Motion through CamelCaseWords and underscore_notation
-Plugin 'bkad/CamelCaseMotion'
 
 
 " All of your Plugins must be added before the following line
@@ -153,13 +132,6 @@ nmap ga <Plug>(EasyAlign)
 " JSON
 " Prevent hiding of quotes
 let g:vim_json_syntax_conceal = 0
-
-" Secure modelines
-" Disabled for now
-let g:secure_modelines_leave_modeline = 1
-
-" CamelCaseMotion
-call camelcasemotion#CreateMotionMappings('<leader>')
 
 "}}}
 
