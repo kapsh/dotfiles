@@ -47,8 +47,8 @@ beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 terminal = "termite"
 editor_cmd = "gvim"
 
-calc_class = "ipython-term"
-calc_cmd = terminal .. " --class=" .. calc_class .. " -t 'Calculator' -e 'ipython'"
+calc_class = "jupyter-qtconsole"
+calc_cmd = "jupyter qtconsole"
 
 -- Set true for remember why I disabled it
 local sloppy_focus = false
