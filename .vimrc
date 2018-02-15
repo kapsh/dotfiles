@@ -111,6 +111,7 @@ set t_Co=256
 let g:airline_detect_iminsert = 1
 " Enable using of pretty symbols
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#keymap#enabled = 0
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
