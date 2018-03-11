@@ -27,6 +27,7 @@
 !/.svimrc
 !/.tmux.conf
 !/.vimrc
+!/.pylintrc
 
 !/.zsh
 /.zsh/*
