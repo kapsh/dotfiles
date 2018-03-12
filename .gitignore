@@ -20,6 +20,7 @@
 !/.config/user-dirs.conf
 !/.config/user-dirs.dirs
 !/.config/rofi/
+!/.config/global_gitignore
 
 !/.conky/conkybar
 

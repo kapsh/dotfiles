@@ -28,3 +28,5 @@
     # Update master and rebase on it
     shift = !git fetch origin master && git rebase master
 
+[core]
+	excludesfile = .config/global_gitignore
