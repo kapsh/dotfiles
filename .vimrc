@@ -174,11 +174,11 @@ set mouse=a   " Enable mouse usage (all modes)
 " {-markers are used to specify folds
 set foldmethod=marker
 
-" 100-symbols warning line
-" Longer lines will be broken after white space
+" 100-symbols warning guide
 set colorcolumn=100
 highlight ColorColumn ctermbg=7 guibg=#bebebe
-set textwidth=100
+" Don't break long lines
+set textwidth=0
 " Wrap long text
 set wrap
 
