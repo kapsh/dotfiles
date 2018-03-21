@@ -72,7 +72,6 @@ plugins=(
     screen
     thefuck
     urltools
-    z
 )
 
 # User configuration
