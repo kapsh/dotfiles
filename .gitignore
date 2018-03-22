@@ -21,6 +21,8 @@
 !/.config/user-dirs.dirs
 !/.config/rofi/
 !/.config/global_gitignore
+!/.config/kitty
+!/.config/kitty/kitty.conf
 
 !/.conky/conkybar
 
