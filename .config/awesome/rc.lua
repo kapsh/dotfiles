@@ -44,7 +44,7 @@ end
 beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "kitty"
 editor_cmd = "gvim"
 
 calc_class = "jupyter-qtconsole"
