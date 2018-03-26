@@ -16,15 +16,12 @@
     lg = log --graph --abbrev-commit --decorate --format=format:'\
 %C(bold blue)%h%C(reset) \
 %C(bold white)%s%C(reset)\
-%C(bold yellow)%d%C(reset)\
+%C(magenta)%d%C(reset)\
 %n        \
-%C(white)%an%C(reset)\
-%C(bold green) - %ar%C(reset) \
-%C(cyan)(%ai)%C(reset)\
+%C(green)%an%C(reset)\
+%C(cyan) - %ar%C(reset) \
+%C(yellow)(%ai)%C(reset)\
 %n'
-
-    # Digest on all local branches
-    branches = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
     # Rollback commit but keep changes
     undo = reset --mixed HEAD~1
@@ -36,4 +33,8 @@
     shift = !git fetch origin master && git rebase master
 
 [core]
-	excludesfile = .config/global_gitignore
+    excludesfile = .config/global_gitignore
+
+[pager]
+	branch = false
+	stash = false
