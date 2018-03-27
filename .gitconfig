@@ -30,7 +30,7 @@
     unstage = reset HEAD --
 
     # Update master and rebase on it
-    shift = !git fetch origin master && git rebase master
+    shift = pull --rebase origin master
 
 [core]
     excludesfile = .config/global_gitignore
