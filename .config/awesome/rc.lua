@@ -467,6 +467,7 @@ awful.rules.rules = {
             class = {
                 "Gpick",
                 "Gtick",
+                "Pavucontrol",
                 "Sxiv",
                 "Wpa_gui",
                 "pinentry",
