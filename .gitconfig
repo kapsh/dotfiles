@@ -38,3 +38,23 @@
 [pager]
     branch = false
     stash = false
+
+    # Is there a way to use variable for this?
+    diff = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified):'
+    log = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified):'
+    show = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified):'
+    lg = less  # fancy and patterns interfere with graph
+
+[color "diff-highlight"]
+    oldNormal = red
+    oldHighlight = red 52
+    newNormal = green
+    newHighlight = green 22
+
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red
+    new = green
+    whitespace = red reverse
