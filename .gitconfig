@@ -1,6 +1,6 @@
 [user]
     email = kapsh@kap.sh
-    name = kapsh
+    name = Alexander Kapshuna
 
 [push]
     default = simple
@@ -36,5 +36,5 @@
     excludesfile = .config/global_gitignore
 
 [pager]
-	branch = false
-	stash = false
+    branch = false
+    stash = false
