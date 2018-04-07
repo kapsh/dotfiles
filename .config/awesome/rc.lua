@@ -312,6 +312,10 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
     awful.key({ modkey }, "r", function() awful.spawn("rofi -show run") end,
         { description = "run rofi", group = "launcher" }),
 
+    -- Zim
+    awful.key({ modkey }, "z", function() awful.spawn("zim") end,
+        { description = "open zim", group = "launcher" }),
+
     -- Screen lock
     awful.key({ modkey }, "F12", function() awful.spawn("xtrlock") end,
         { description = "lock screen", group = "launcher" }),
