@@ -52,7 +52,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'elzr/vim-json'
 
 " Next generation completion framework after neocomplcache
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/deoplete.nvim'
 
 " A Vim alignment plugin
 Plugin 'junegunn/vim-easy-align'
