@@ -228,6 +228,9 @@ set backspace=indent,eol,start  " Backspace unindents, joins lines and over star
 
 set nostartofline  " Stop moving the cursor to the first non-space character in lines
 
+" Disable autostarting new line after comment with another comment
+autocmd FileType * setlocal formatoptions-=cro
+
 "}}}
 
 " {{{ Russian layout
