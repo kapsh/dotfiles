@@ -54,24 +54,14 @@ plugins=(
     colored-man-pages
     copybuffer
     copydir
-    copyfile
     cp
     dirhistory
     dirpersist
-    encode64
     extract
     fancy-ctrl-z
-    fastfile
-    git-extras
-    history
     jump
-    perms
     pip
-    pylint
     rsync
-    screen
-    thefuck
-    urltools
 )
 
 # User configuration
@@ -83,6 +73,4 @@ source $ZSH/oh-my-zsh.sh
 
 # readme says it must be included in the end of file
 source $ZSH_TP/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-eval $(thefuck --alias)
 
