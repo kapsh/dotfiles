@@ -146,7 +146,11 @@ set directory=$HOME/.vim-runtime/swaps
 set undodir=$HOME/.vim-runtime/undodir
 set undofile
 " viminfo location
-set viminfo+=n~/.vim-runtime/viminfo
+if has('nvim')
+    set shada+=n~/.vim-runtime/.shada
+else
+    set viminfo+=n~/.vim-runtime/.viminfo
+endif
 "}}}
 
 "{{{ Opening and saving options

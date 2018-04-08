@@ -23,6 +23,7 @@
 !/.config/global_gitignore
 !/.config/kitty
 !/.config/kitty/kitty.conf
+!/.config/nvim
 
 !/.conky/conkybar
 
