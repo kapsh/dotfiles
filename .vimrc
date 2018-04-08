@@ -121,9 +121,6 @@ let g:neocomplete#data_directory = '$HOME/.vim-runtime/neocomplete'
 let g:yankring_history_dir = '$HOME/.vim-runtime'
 :nnoremap <silent> <F11> :YRShow<CR>
 
-" NerdTree
-:nnoremap <silent> <F3> :NERDTreeToggle<CR>
-
 " Easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
