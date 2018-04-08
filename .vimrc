@@ -278,4 +278,7 @@ autocmd BufWritePost  *.zsh :!zsh -n %
 " Maximum number of tabs on opening
 set tabpagemax=100
 
+" Values for exheres template
+let g:exheres_author_name = "Alexander Kapshuna"
+
 "}}}
