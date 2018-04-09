@@ -38,10 +38,4 @@ alias scp='scp -r'
 alias play='ansible-playbook'
 compdef _ansible-playbook play
 
-function vim() {
-    for (( i=0; i<5; i++ )); do
-        print -P "%B%F{red}WRONG!"
-    done
-    sleep 1s
-    command vim "$@"
-}
+alias vim=nvim
