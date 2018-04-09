@@ -310,7 +310,11 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
 
     -- Prompt
     awful.key({ modkey }, "r", function() awful.spawn("rofi -show run") end,
-        { description = "run rofi", group = "launcher" }),
+        { description = "run...", group = "launcher" }),
+
+    -- Window search
+    awful.key({ modkey }, "w", function() awful.spawn("rofi -show window") end,
+        { description = "windows", group = "launcher" }),
 
     -- Zim
     awful.key({ modkey }, "z", function() awful.spawn("zim") end,

@@ -5,7 +5,7 @@ rofi.fake-transparency:              true
 
 ! list of all enabled modes is shown at the bottom
 rofi.sidebar-mode:                   true
-rofi.modi:                           window,run,ssh
+rofi.modi:                           window,run
 
 ! Position on screen
 ! 1 2 3
