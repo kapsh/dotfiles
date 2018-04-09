@@ -12,6 +12,7 @@
 !/.Xresources
 !/.xbindkeysrc
 !/.xsession
+!/.xinitrc
 
 !/.config/
 /.config/*
