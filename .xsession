@@ -29,7 +29,7 @@ numlockx on &
 spacefm --daemon-mode &
 
 # Compositing
-compton -c -C  -I 0.2 -O 0.2 -f -i 0.92 -b
+compton -c -C  -I 0.2 -O 0.2 -f -b
 
 # Visual bell daemon
 xvisbell &
