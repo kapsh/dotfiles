@@ -38,4 +38,4 @@ alias scp='scp -r'
 alias play='ansible-playbook'
 compdef _ansible-playbook play
 
-alias vim=nvim
+(( $+commands[nvim] )) && alias vim=nvim
