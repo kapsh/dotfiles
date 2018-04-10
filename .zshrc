@@ -62,7 +62,6 @@ plugins=(
     jump
     pip
     rsync
-    last-working-dir
 )
 
 # User configuration
