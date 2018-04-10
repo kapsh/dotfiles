@@ -42,9 +42,6 @@ Plugin 'Toggle'
 " Vim plugin for intensely orgasmic commenting
 Plugin 'scrooloose/nerdcommenter'
 
-" A tree explorer plugin for vim
-Plugin 'scrooloose/nerdtree'
-
 " A better JSON for Vim
 Plugin 'elzr/vim-json'
 
