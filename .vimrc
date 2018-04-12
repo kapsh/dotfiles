@@ -215,9 +215,9 @@ set autoindent
 set smartindent
 
 " Searching
-set wrapscan       " Searches wrap around when reaching EOF
-set incsearch      " Incremental search
-set smartcase      " Ignore the case when searching unless uppercase letters are used
+set wrapscan             " Searches wrap around when reaching EOF
+set incsearch            " Incremental search
+set ignorecase smartcase " Ignore the case when searching unless uppercase letters are used
 
 set backspace=indent,eol,start  " Backspace unindents, joins lines and over start of insert
 
