@@ -1,9 +1,8 @@
-! Xft.dpi:            121 
 
-XTerm*background:   #f5fffc
-XTerm*foreground:   black
-XTerm*faceName:     xft:DejaVu Sans Mono:size=10
-XTerm*faceNameDoublesize:   xft:DejaVu Sans Mono:style=Regular
+XTerm*background:   black
+XTerm*foreground:   white
+XTerm*faceName:     xft:monospace:size=10
+XTerm*faceNameDoublesize:   xft:monospace
 XTerm*utf8:         2
 !XTerm*faceSize:        10
 XTerm*metaSendsEscape:  true
@@ -15,15 +14,13 @@ XTerm*saveLines:    10000
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 *VT100*translations: #override Meta <Btn1Up>: exec-formatted("google-chrome-stable '%t'", PRIMARY)
 
-Tkabber*font: DroidSans 11
+!Xcursor.size:       16
+Xcursor.theme:      white-classicia++
 
-Xcursor.size:       16
-Xcursor.theme:      Neutral_Plus
-
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
 

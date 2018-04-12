@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo "$DISPLAY" > "$HOME"/.xdisplay &
+export DESKTOP_SESSION="gnome"  # for icons in Qt apps
 
 pulseaudio --start &
 
