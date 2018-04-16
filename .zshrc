@@ -27,7 +27,7 @@ zplugin light sindresorhus/pure
 PURE_CMD_MAX_EXEC_TIME=60
 
 # Should be loaded before completion list-colors
-zplugin ice atclone"dircolors -b LS_COLORS > colors.cache" atpull'%atclone' pick"colors.cache"
+zplugin ice atclone"dircolors -b LS_COLORS > colors.zsh" atpull'%atclone' pick"colors.zsh"
 zplugin light trapd00r/LS_COLORS
 
 # TODO sort out completion and correction options
