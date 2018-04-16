@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Workaround for Awesome and russian layout
-xkbcomp $DISPLAY - | egrep -v 'group . = AltGr;' | xkbcomp - $DISPLAY &> /dev/null  
