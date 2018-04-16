@@ -14,7 +14,9 @@ function cdls() {
     cd "$1" && ls
 }
 
-compdef _mkdir md mkcd cdls
+# TODO fix completion here
+compdef _cd cdls
+compdef _mkdir md mkcd
 
 alias cp='cp -a'
 
