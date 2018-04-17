@@ -47,3 +47,7 @@ function nohup() {
 alias play='ansible-playbook'
 compdef _ansible-playbook play
 
+# Correction for these commands doesn't make sense
+alias eclectic='nocorrect eclectic'
+alias cave='nocorrect noglob cave'
+
