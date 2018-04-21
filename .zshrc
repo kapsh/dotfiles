@@ -19,7 +19,7 @@ ZPLGM[HOME_DIR]="${ZDOTDIR}/.zplugin"
 ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/zplugin"
 source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
 
-zplugin snippet "${MY_ZSH}/filetypes.zsh"
+source "${MY_ZSH}/filetypes.zsh"
 
 # Theme
 zplugin ice pick"async.zsh" src"pure.zsh"
@@ -92,9 +92,9 @@ setopt no_menu_complete
 # insert full path to command after =command<tab>
 setopt equals
 
-zplugin snippet "${MY_ZSH}/aliases.zsh"
-zplugin snippet "${MY_ZSH}/history.zsh"
-zplugin snippet "${MY_ZSH}/plugins.zsh"
+source "${MY_ZSH}/aliases.zsh"
+source "${MY_ZSH}/history.zsh"
+source "${MY_ZSH}/plugins.zsh"
 
 zplugin ice atinit"zpcompinit"
 zplugin light zdharma/fast-syntax-highlighting
