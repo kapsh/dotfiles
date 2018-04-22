@@ -31,7 +31,7 @@ alias rm='rm -Ir'
 alias scp='scp -r'
 
 alias free='free -th'
-alias du='du -hst'
+alias du='du -hsc'
 alias df='df -h'
 alias ddf='df -l -x tmpfs -x devtmpfs'
 
