@@ -51,3 +51,6 @@ compdef _ansible-playbook play
 alias eclectic='nocorrect eclectic'
 alias cave='nocorrect noglob cave'
 
+# Stupid terminfo workaround
+alias ssh='TERM=xterm-256color ssh'
+
