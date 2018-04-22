@@ -6,5 +6,6 @@ if (( $+commands[fasd] )); then
         fasd --init auto > "${fasd_cache}"
     fi
     source "${fasd_cache}"
+    bindkey '^X^F' fasd-complete
 fi
 
