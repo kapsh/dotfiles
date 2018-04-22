@@ -19,8 +19,6 @@ ZPLGM[HOME_DIR]="${ZDOTDIR}/.zplugin"
 ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/zplugin"
 source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
 
-source "${MY_ZSH}/filetypes.zsh"
-
 # Theme
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
@@ -93,6 +91,8 @@ setopt no_menu_complete
 setopt equals
 
 source "${MY_ZSH}/aliases.zsh"
+source "${MY_ZSH}/fasd.zsh"
+source "${MY_ZSH}/filetypes.zsh"
 source "${MY_ZSH}/history.zsh"
 source "${MY_ZSH}/plugins.zsh"
 
