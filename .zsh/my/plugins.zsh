@@ -4,13 +4,13 @@
 
 function lazy_omz() {
     snippet="${1:?location expected}"
-    zplugin ice wait'0' lucid "$@[2,-1]"
+    zplugin ice wait'0' silent "$@[2,-1]"
     zplugin snippet OMZ::"$snippet"
 }
 
 function lazy_plugin() {
     plugin="${1:?location expected}"
-    zplugin ice wait'0' lucid "$@[2,-1]"
+    zplugin ice wait'0' silent "$@[2,-1]"
     zplugin light "${plugin}"
 }
 
@@ -19,6 +19,7 @@ lazy_omz plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
 
 #  completion for pip
 lazy_omz plugins/pip/pip.plugin.zsh
+lazy_omz plugins/pip/_pip
 
 # Navigate directory history with Alt+arrows
 lazy_omz plugins/dirhistory/dirhistory.plugin.zsh
