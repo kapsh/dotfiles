@@ -1,10 +1,12 @@
 #!/bin/bash
 # Shortcut for creating new Exherbo package
 
+set -e
+
 main() {
-    cat="${1:-category?}"
-    pkg="${2:-package?}"
-    ver="${3:-version?}"
+    cat="${1:?category?}"
+    pkg="${2:?package?}"
+    ver="${3:?version?}"
 
     repo="$(git rev-parse --show-toplevel)"
     newdir="${repo}/packages/${cat}/${pkg}"
