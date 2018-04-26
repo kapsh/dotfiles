@@ -82,7 +82,8 @@ bindkey -M menuselect "+" accept-and-menu-complete
 
 setopt autocd auto_pushd pushd_ignore_dups pushdminus
 
-WORDCHARS="${WORDCHARS//[\/.]}"
+# Optimal way to move through arguments in command line
+WORDCHARS="${WORDCHARS//[\/.=]}"
 autoload -U select-word-style
 select-word-style normal
 
