@@ -37,6 +37,7 @@ alias ddf='df -l -x tmpfs -x devtmpfs'
 
 (( $+commands[nvim] )) && alias vim=nvim
 (( $+commands[colordiff] )) && alias diff=colordiff
+(( $+commands[pinfo] )) && alias info=pinfo
 
 alias grep='grep -T --color=auto --exclude-dir={.git}'
 
