@@ -1,5 +1,11 @@
 # My aliases
 
+grc="/etc/grc/grc.zsh"
+if [[ -f "${grc}" ]]; then
+    source "${grc}"
+fi
+unset grc
+
 alias ls='ls --color=auto -v -p --group-directories-first '
 alias ll='ls -lh'
 compdef _ls ll

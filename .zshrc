@@ -1,6 +1,4 @@
 
-# TODO add grc
-
 ZDOTDIR="${HOME}/.zsh"
 MY_ZSH="${ZDOTDIR}/my"
 ZSH_CACHE_DIR="${ZDOTDIR}/.cache"  # Used by plugins from oh-my-zsh
