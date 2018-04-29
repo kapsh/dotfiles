@@ -1,5 +1,6 @@
+# Initialize aliases and completion from fasd
 
-local fasd_cache="${ZSH_CACHE_DIR}/fasd-init"
+fasd_cache="${ZSH_CACHE_DIR}/fasd-init"
 
 if (( $+commands[fasd] )); then
     if ! [[ -e "${fasd_cache}" ]]; then
@@ -8,4 +9,6 @@ if (( $+commands[fasd] )); then
     source "${fasd_cache}"
     bindkey '^X^F' fasd-complete
 fi
+
+unset fasd_cache
 

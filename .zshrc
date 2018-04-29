@@ -1,5 +1,4 @@
 
-# TODO try https://github.com/clvv/fasd
 # TODO add grc
 # TODO add git-extras
 
