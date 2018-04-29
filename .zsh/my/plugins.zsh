@@ -1,16 +1,15 @@
 # Third-party plugins
 
-# Cherry-pick some parts of oh-my-zsh
-
+# Cherry-pick some part from oh-my-zsh
 function lazy_omz() {
     snippet="${1:?location expected}"
-    zplugin ice wait'0' silent "$@[2,-1]"
+    zplugin ice wait"0" silent "$@[2,-1]"
     zplugin snippet OMZ::"$snippet"
 }
 
 function lazy_plugin() {
     plugin="${1:?location expected}"
-    zplugin ice wait'0' silent "$@[2,-1]"
+    zplugin ice wait"0" silent "$@[2,-1]"
     zplugin light "${plugin}"
 }
 
@@ -69,4 +68,8 @@ lazy_plugin t413/zsh-background-notify
 lazy_plugin zsh-users/zsh-completions
 
 unfunction lazy_omz lazy_plugin
+
+zplugin ice lucid wait"0" as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+zplugin light tj/git-extras
+source "${ZPLGM[PLUGINS_DIR]}/tj---git-extras/etc/git-extras-completion.zsh"
 

@@ -1,6 +1,5 @@
 
 # TODO add grc
-# TODO add git-extras
 
 ZDOTDIR="${HOME}/.zsh"
 MY_ZSH="${ZDOTDIR}/my"

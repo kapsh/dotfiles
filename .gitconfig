@@ -23,9 +23,6 @@
 %C(yellow)(%ai)%C(reset)\
 %n'
 
-    # Rollback commit but keep changes
-    undo = reset --mixed HEAD~1
-
     # Remove specified file from staged changes
     unstage = reset HEAD --
 
