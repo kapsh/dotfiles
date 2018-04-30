@@ -61,3 +61,5 @@ alias cave='nocorrect noglob cave'
 # Stupid terminfo workaround
 alias ssh='TERM=xterm-256color ssh'
 
+# Hide window icons from output
+alias xprop='xprop -len 1000'
