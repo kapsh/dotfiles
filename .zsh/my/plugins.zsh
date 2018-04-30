@@ -1,10 +1,15 @@
-# Third-party plugins
+# Load third-party plugins.
+
+function lazy_snippet() {
+    snippet="${1:?location expected}"
+    zplugin ice wait"0" silent "$@[2,-1]"
+    zplugin snippet "${snippet}"
+}
 
 # Cherry-pick some part from oh-my-zsh
 function lazy_omz() {
     snippet="${1:?location expected}"
-    zplugin ice wait"0" silent "$@[2,-1]"
-    zplugin snippet OMZ::"$snippet"
+    lazy_snippet OMZ::"$snippet"
 }
 
 function lazy_plugin() {
@@ -54,7 +59,6 @@ lazy_plugin Tarrasch/zsh-bd
 
 lazy_plugin ael-code/zsh-colored-man-pages
 
-# TODO doesn't work?
 lazy_plugin gangleri/pipenv
 
 lazy_plugin hcgraf/zsh-sudo
@@ -67,9 +71,11 @@ lazy_plugin t413/zsh-background-notify
 
 lazy_plugin zsh-users/zsh-completions
 
-unfunction lazy_omz lazy_plugin
+git_extras="/usr/share/zsh/site-functions/git-extras-completion.zsh"
+if [[ -f "${git_extras}" ]]; then
+    lazy_snippet "${git_extras}"
+fi
+unset git_extras
 
-zplugin ice lucid wait"0" as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
-zplugin light tj/git-extras
-source "${ZPLGM[PLUGINS_DIR]}/tj---git-extras/etc/git-extras-completion.zsh"
+unfunction lazy_omz lazy_plugin lazy_snippet
 
