@@ -269,7 +269,15 @@ autocmd BufWritePost  *.zsh :!zsh -n %
 " Maximum number of tabs on opening
 set tabpagemax=100
 
-" Values for exheres template
+"}}}
+
+"{{{ Exherbo-specific stuff
+
+" Values for exheres template.
 let g:exheres_author_name = "Alexander Kapshuna"
 
+" Ignore options and version spec when sorting.
+command -range SortPackages <line1>,<line2>sort r /[^[]\+/
+
 "}}}
+
