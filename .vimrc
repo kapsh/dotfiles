@@ -274,7 +274,7 @@ set tabpagemax=100
 "{{{ Exherbo-specific stuff
 
 " Values for exheres template.
-let g:exheres_author_name = "Alexander Kapshuna"
+let g:exheres_author_name = "Alexander Kapshuna <kapsh@kap.sh>"
 
 " Ignore options and version spec when sorting.
 command -range SortPackages <line1>,<line2>sort r /[^[]\+/
