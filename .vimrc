@@ -277,7 +277,7 @@ set tabpagemax=100
 let g:exheres_author_name = "Alexander Kapshuna <kapsh@kap.sh>"
 
 " Ignore options and version spec when sorting.
-command -range SortPackages <line1>,<line2>sort r /[^[]\+/
+command -range SortPackages <line1>,<line2>sort ri /[^[]\+/
 
 "}}}
 
