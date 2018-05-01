@@ -45,7 +45,7 @@ alias ddf='df -l -x tmpfs -x devtmpfs'
 (( $+commands[colordiff] )) && alias diff=colordiff
 (( $+commands[pinfo] )) && alias info=pinfo
 
-alias grep='grep -T --color=auto --exclude-dir={.git}'
+alias grep='grep -T --color=auto --exclude-dir=.git'
 
 function nohup() {
     command nohup >/dev/null "$@"
