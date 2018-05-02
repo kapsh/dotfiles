@@ -1,12 +1,7 @@
 # My aliases
 
-grc="/etc/grc/grc.zsh"
-if [[ -f "${grc}" ]]; then
-    source "${grc}"
-fi
-unset grc
 
-alias ls='ls --color=auto -v -p --group-directories-first '
+alias ls='ls --color -v -p --group-directories-first '
 alias ll='ls -lh'
 compdef _ls ll
 
@@ -63,3 +58,9 @@ alias ssh='TERM=xterm-256color ssh'
 
 # Hide window icons from output
 alias xprop='xprop -len 1000'
+
+# Keep this last so that grc can override existing aliases.
+grc="/etc/grc/grc.zsh"
+[[ -f "${grc}" ]] && source "${grc}"
+unset grc
+
