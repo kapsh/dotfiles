@@ -16,9 +16,7 @@ ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/zplugin"
 source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
 
 # Theme
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
-PURE_CMD_MAX_EXEC_TIME=60
+source "${MY_ZSH}/theme.zsh"
 
 # Should be loaded before completion list-colors
 zplugin ice atclone"dircolors -b LS_COLORS > colors.zsh" atpull'%atclone' pick"colors.zsh"
