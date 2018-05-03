@@ -1,7 +1,7 @@
 # My aliases
 
 
-alias ls='ls --color -v -p --group-directories-first '
+alias ls='ls --color -C -v -p --group-directories-first '
 alias ll='ls -lh'
 compdef _ls ll
 
