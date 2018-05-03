@@ -57,8 +57,6 @@ lazy_plugin RobSis/zsh-reentry-hook
 
 lazy_plugin Tarrasch/zsh-bd
 
-lazy_plugin ael-code/zsh-colored-man-pages
-
 lazy_plugin gangleri/pipenv
 
 lazy_plugin hcgraf/zsh-sudo

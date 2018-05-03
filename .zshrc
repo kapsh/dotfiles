@@ -90,6 +90,7 @@ setopt no_menu_complete
 setopt equals
 
 source "${MY_ZSH}/aliases.zsh"
+source "${MY_ZSH}/colored-man-pages.zsh"
 source "${MY_ZSH}/fasd.zsh"
 source "${MY_ZSH}/filetypes.zsh"
 source "${MY_ZSH}/history.zsh"
