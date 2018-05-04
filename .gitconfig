@@ -37,9 +37,9 @@
     stash = false
 
     # Is there a way to use variable for this?
-    diff = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified|renamed):'
-    log = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified|renamed):'
-    show = diff-so-fancy | less --tabs=4 -R --pattern '^(Date|added|deleted|modified|renamed):'
+    diff = diff-so-fancy | less --tabs=4 -R
+    log = diff-so-fancy | less --tabs=4 -R
+    show = diff-so-fancy | less --tabs=4 -R
     lg = less  # fancy and patterns interfere with graph
 
 [color "diff-highlight"]
