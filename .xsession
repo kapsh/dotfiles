@@ -32,7 +32,7 @@ spacefm --daemon-mode &
 # Compositing
 compton -c -C  -I 0.2 -O 0.2 -f -b
 
-xautolock -time 10 -locker 'xtrlock' &
+xscreensaver -no-splash &
 
 xset r rate 300
 xset m 4
