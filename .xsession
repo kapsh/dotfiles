@@ -32,9 +32,6 @@ spacefm --daemon-mode &
 # Compositing
 compton -c -C  -I 0.2 -O 0.2 -f -b
 
-# Visual bell daemon
-xvisbell &
-
 xautolock -time 10 -locker 'xtrlock' &
 
 xset r rate 300
