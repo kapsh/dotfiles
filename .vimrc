@@ -63,9 +63,6 @@ Plugin 'ciaranm/detectindent'
 " Show differences for recovered files
 Plugin 'chrisbra/Recover.vim'
 
-" Yank and delete history
-Plugin 'vim-scripts/YankRing.vim'
-
 " Highlight multiple search results
 Plugin 'vim-scripts/MultipleSearch'
 
