@@ -104,14 +104,6 @@ let g:airline_detect_iminsert = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#data_directory = '$HOME/.vim-runtime/neocomplete'
-
-" Yankring
-let g:yankring_history_dir = '$HOME/.vim-runtime'
-:nnoremap <silent> <F11> :YRShow<CR>
-
 " Easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
