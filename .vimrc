@@ -120,6 +120,9 @@ let g:startify_custom_header = ''
 " Increase MRU count
 let g:startify_files_number = 20
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
 "}}}
 
 "{{{ Special directories and files
