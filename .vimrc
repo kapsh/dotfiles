@@ -114,6 +114,12 @@ nmap ga <Plug>(EasyAlign)
 " Prevent hiding of quotes
 let g:vim_json_syntax_conceal = 0
 
+" Startify
+" Disable fortunes
+let g:startify_custom_header = ''
+" Increase MRU count
+let g:startify_files_number = 20
+
 "}}}
 
 "{{{ Special directories and files
