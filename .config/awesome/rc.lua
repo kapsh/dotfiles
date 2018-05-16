@@ -470,19 +470,16 @@ awful.rules.rules = {
     {
         rule_any = {
             instance = {
-                "DTA", -- Firefox addon DownThemAll.
             },
             class = {
-                "Gpick",
-                "Gtick",
                 "Pavucontrol",
-                "Sxiv",
-                "Wpa_gui",
                 "pinentry",
+                "Wpa_gui",
                 calc_class,
             },
             name = {
                 "Event Tester", -- xev.
+                "Steam Guard - Computer Authorization Required",  -- pin-code window.
             },
             role = {
                 "AlarmWindow", -- Thunderbird's calendar.
@@ -496,7 +493,6 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-                "Termite",
                 calc_class,
             }
         },
