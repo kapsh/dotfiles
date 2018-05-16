@@ -232,8 +232,10 @@ root.buttons(awful.util.table.join(awful.button({}, 3, function() mymainmenu:tog
     awful.button({}, 5, awful.tag.viewnext)))
 
 --  Key bindings
-globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.show_help,
-    { description = "show help", group = "awesome" }),
+globalkeys = awful.util.table.join(
+
+    awful.key({ modkey, }, "/", hotkeys_popup.show_help,
+        { description = "show help", group = "awesome" }),
     awful.key({ modkey, }, "Left", awful.tag.viewprev,
         { description = "view previous", group = "tag" }),
     awful.key({ modkey, }, "Right", awful.tag.viewnext,
@@ -308,9 +310,17 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
         end,
         { description = "restore minimized", group = "client" }),
 
-    -- Prompt
+    -- Run prompt
     awful.key({ modkey }, "r", function() awful.spawn("rofi -show run") end,
         { description = "run...", group = "launcher" }),
+
+    -- Another run prompt
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -show drun") end,
+        { description = "run desktop file...", group = "launcher" }),
+
+    -- And builtin awesome run prompt just in case
+    awful.key({ modkey, "Shift" }, "r", function () awful.screen.focused().mypromptbox:run() end,
+        {description = "run prompt", group = "launcher"}),
 
     -- Window search
     awful.key({ modkey }, "w", function() awful.spawn("rofi -show window") end,
@@ -321,7 +331,7 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
         { description = "open zim", group = "launcher" }),
 
     -- Screen lock
-    awful.key({ modkey }, "F12", function() awful.spawn("xtrlock") end,
+    awful.key({ modkey }, "F12", function() awful.spawn("xscreensaver-command -lock") end,
         { description = "lock screen", group = "launcher" }),
 
     -- Calculator
@@ -355,10 +365,9 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "/", hotkeys_popup.sho
                 history_path = awful.util.get_cache_dir() .. "/history_eval"
             }
         end,
-        { description = "lua execute prompt", group = "awesome" }),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-        { description = "show the menubar", group = "launcher" }))
+        { description = "lua execute prompt", group = "awesome" })
+
+)
 
 clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
     function(c)
