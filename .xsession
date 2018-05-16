@@ -11,7 +11,7 @@ eval $(ssh-agent)
 xrdb -merge .Xresources
 
 # Clipboard manager
-parcellite &
+copyq &
 
 # Set layout
 myxkbmap && kbdd &
