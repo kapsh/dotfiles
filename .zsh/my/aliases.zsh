@@ -65,8 +65,9 @@ alias ssh='TERM=xterm-256color ssh'
 # Hide window icons from output
 alias xprop='xprop -len 1000'
 
-# Easy use of wildcards in locate
+# Wildcards should be passed to these programs literaly
 alias locate='noglob locate'
+alias find='noglob find'
 
 # Keep this last so that grc can override existing aliases.
 grc="/etc/grc/grc.zsh"
