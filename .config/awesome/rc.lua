@@ -481,6 +481,7 @@ awful.rules.rules = {
             instance = {
             },
             class = {
+                "copyq",
                 "Pavucontrol",
                 "pinentry",
                 "Wpa_gui",
