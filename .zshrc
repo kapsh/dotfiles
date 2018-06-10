@@ -6,7 +6,7 @@ ZSH_CACHE_DIR="${ZDOTDIR}/.cache"  # Used by plugins from oh-my-zsh
 source "${MY_ZSH}/tmuxed-ssh.zsh"
 
 # Common environment variables
-export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 PYTHONSTARTUP="${HOME}/.python_startup.py"
 
 # zplugin init
