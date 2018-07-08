@@ -1,6 +1,6 @@
 #!/bin/bash
 
-venv="$1"
+venv="${1?missing virtualenv location}"
 shift
 activator="$venv/bin/activate_this.py"
 venv_python="$venv/bin/python"
