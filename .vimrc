@@ -267,6 +267,9 @@ autocmd BufWritePost  *.zsh :!zsh -n %
 " Maximum number of tabs on opening
 set tabpagemax=100
 
+" Search selected text
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+
 "}}}
 
 "{{{ Exherbo-specific stuff
