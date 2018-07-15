@@ -36,6 +36,8 @@
     branch = false
     stash = false
 
+    tag = less -F
+
     # Is there a way to use variable for this?
     diff = diff-so-fancy | less --tabs=4 -R
     log = diff-so-fancy | less --tabs=4 -R
