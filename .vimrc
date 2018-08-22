@@ -45,26 +45,11 @@ Plugin 'scrooloose/nerdcommenter'
 " A better JSON for Vim
 Plugin 'elzr/vim-json'
 
-" Next generation completion framework after neocomplcache
+" Dark powered asynchronous completion framework
 Plugin 'Shougo/deoplete.nvim'
-
-" A Vim alignment plugin
-Plugin 'junegunn/vim-easy-align'
-
-" Undo tree
-Plugin 'sjl/gundo.vim'
-
-" ansi escape sequences concealed, but highlighted as specified.
-Plugin 'powerman/vim-plugin-AnsiEsc'
 
 " automatically detecting indent settings
 Plugin 'ciaranm/detectindent'
-
-" Show differences for recovered files
-Plugin 'chrisbra/Recover.vim'
-
-" Highlight multiple search results
-Plugin 'vim-scripts/MultipleSearch'
 
 " transparent pasting into vim. (i.e. no more :set paste!)
 Plugin 'ConradIrwin/vim-bracketed-paste'
@@ -72,7 +57,6 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 " Status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
