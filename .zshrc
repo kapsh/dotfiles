@@ -72,7 +72,7 @@ zplugin snippet OMZ::lib/key-bindings.zsh
 bindkey -M menuselect "+" accept-and-menu-complete
 
 # Shortcut for ranger
-bindkey -s "\er" "ranger\n"
+bindkey -s "\er" ". ranger\n"
 
 # http://wiki.bash-hackers.org/scripting/debuggingtips#making_xtrace_more_useful
 #export PS4='[$(basename ${BASH_SOURCE}):${LINENO}] ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
