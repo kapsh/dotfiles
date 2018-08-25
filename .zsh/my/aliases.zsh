@@ -56,7 +56,7 @@ compdef _ansible-playbook play
 alias eclectic='nocorrect eclectic'
 alias cave='nocorrect noglob cave'
 
-alias mscan='mscan2.rb -i system'
+alias mscan='mscan2.rb -i system -l unused'
 
 # }}}
 
