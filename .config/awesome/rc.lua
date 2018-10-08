@@ -330,6 +330,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "z", function() awful.spawn("zim") end,
         { description = "open zim", group = "launcher" }),
 
+    -- Clipboard manager
+    awful.key({ modkey }, "q", function() awful.spawn("copyq show") end,
+        { description = "clipboard history", group = "launcher" }),
+
     -- Screen lock
     awful.key({ modkey }, "F12", function() awful.spawn("xscreensaver-command -lock") end,
         { description = "lock screen", group = "launcher" }),
