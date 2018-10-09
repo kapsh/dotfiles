@@ -2,6 +2,7 @@
 
 rofi.font:                           mono 10
 rofi.fake-transparency:              true
+rofi.terminal:                       kitty
 
 ! list of all enabled modes is shown at the bottom
 rofi.sidebar-mode:                   true
