@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[[ $# = 0 ]] && exit 1
+
+while true; do
+    if ssh "$@"; then
+        break
+    else
+        sleep 5s
+    fi
+done
+
