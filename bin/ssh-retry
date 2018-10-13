@@ -3,10 +3,12 @@
 [[ $# = 0 ]] && exit 1
 
 while true; do
-    if ssh "$@"; then
-        break
-    else
+    ssh "$@"
+    if [[ $? = 255 ]];
+    then
         sleep 5s
+    else
+        break
     fi
 done
 
