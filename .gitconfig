@@ -60,3 +60,6 @@
 
 [diff]
     algorithm = histogram
+
+[rebase]
+    autosquash = true
