@@ -13,6 +13,6 @@ setopt extended_history
 # replace older commands if duplicated
 setopt hist_ignore_all_dups
 
-# synchronize history in different shells
-setopt share_history
+# Independent history in different shells
+setopt no_share_history
 
