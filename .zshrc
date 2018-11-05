@@ -79,8 +79,8 @@ bindkey -s "\er" ". ranger\n"
 
 setopt autocd auto_pushd pushd_ignore_dups pushdminus
 
-# Optimal way to move through arguments in command line
-WORDCHARS="${WORDCHARS//[\/.=]}"
+# Optimal way to move through arguments (stop at these chars)
+WORDCHARS="${WORDCHARS//[\/.=-]}"  # default: *?_-.[]~=/&;!#$%^(){}<>
 autoload -U select-word-style
 select-word-style normal
 
