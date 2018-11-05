@@ -254,6 +254,12 @@ set tabpagemax=100
 " Search selected text
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
+" Jump to last position in file
+au BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+\ |   exe "normal! g`\""
+\ | endif
+
 "}}}
 
 "{{{ Exherbo-specific stuff
