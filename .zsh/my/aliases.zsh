@@ -71,7 +71,10 @@ alias locate='noglob locate'
 alias find='noglob find'
 
 # Keep this last so that grc can override existing aliases.
-grc="/etc/grc/grc.zsh"
-[[ -f "${grc}" ]] && source "${grc}"
-unset grc
+grc_aliases="/etc/grc/grc.zsh"
+if [[ -f "${grc_aliases}" ]]; then
+    source "${grc_aliases}"
+    alias ll="grc ls -lh"
+fi
+unset grc_aliases
 
