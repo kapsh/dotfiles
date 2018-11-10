@@ -10,15 +10,8 @@ eval $(ssh-agent)
 # if wasm't set automatically
 xrdb -merge .Xresources
 
-# Clipboard manager
-copyq &
-
 # Set layout
 myxkbmap && kbdd &
-
-# Autohiding mouse cursos
-# Bugs with awesome with sloppy focus
-unclutter -idle 10 &
 
 # Hotkey handling
 xbindkeys &
