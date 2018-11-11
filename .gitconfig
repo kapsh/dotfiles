@@ -63,3 +63,7 @@
 
 [rebase]
     autosquash = true
+
+[tag]
+	sort = committerdate
+
