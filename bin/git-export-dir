@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+directory="${1:?directory parameter required}"
+new_repo="${2:?new repository parameter required}"
+
+git log --pretty=email --patch-with-stat --reverse -- "${directory}" \
+    | (cd "${new_repo}" && git am)
