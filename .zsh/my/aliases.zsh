@@ -1,8 +1,10 @@
 # My aliases
 
 
-alias ls='ls --color -C -v -p --group-directories-first '
-alias ll='ls -lh'
+MY_LS=(ls --color -C -v -p --group-directories-first)
+MY_LL=(${MY_LS} -lh)
+alias ls="${MY_LS}"
+alias ll="${MY_LL}"
 compdef _ls ll
 
 alias md='nocorrect mkdir -pv'
@@ -74,7 +76,8 @@ alias find='noglob find'
 grc_aliases="/etc/grc/grc.zsh"
 if [[ -f "${grc_aliases}" ]]; then
     source "${grc_aliases}"
-    alias ll="grc ls -lh"
+    alias ll="grc ${MY_LL}"
 fi
 unset grc_aliases
 
+unset MY_LS MY_LL
