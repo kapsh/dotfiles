@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
-directory="${1:?directory parameter required}"
-new_repo="${2:?new repository parameter required}"
+source_path="${1:?source path parameter required}"
+destination="${2:?destination parameter required}"
 
-git log --pretty=email --patch-with-stat --reverse -- "${directory}" \
-    | (cd "${new_repo}" && git am)
+export_patches() {
+    git log --pretty=email --patch-with-stat --reverse -- "${source_path}"
+}
+
+apply_patches() {
+    cd "${destination}" && git am
+}
+
+if [[ "${destination}" = "-" ]]; then
+    export_patches
+else
+    export_patches | apply_patches
+fi
+
