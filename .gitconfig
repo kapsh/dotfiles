@@ -26,9 +26,6 @@
     # Remove specified file from staged changes
     unstage = reset HEAD --
 
-    # Update master and rebase on it
-    shift = pull --rebase origin master
-
 [core]
     excludesfile = .config/global_gitignore
 
