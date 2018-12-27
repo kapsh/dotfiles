@@ -62,7 +62,7 @@
     autosquash = true
 
 [tag]
-	sort = committerdate
+	sort = creatordate
 
 [protocol]
 	version = 2
