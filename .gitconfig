@@ -8,7 +8,7 @@
 [alias]
 
     # Shortcuts for simple commands
-    co = checkout
+    co = checkout -q
     st = status -sb
     commend = commit --amend
     staged = diff --staged
