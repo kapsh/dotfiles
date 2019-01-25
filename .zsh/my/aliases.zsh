@@ -81,3 +81,8 @@ fi
 unset grc_aliases
 
 unset MY_LS MY_LL
+
+ts2date() {
+    date -d "@$1"
+}
+
