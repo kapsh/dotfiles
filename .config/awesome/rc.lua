@@ -489,6 +489,7 @@ awful.rules.rules = {
                 "Pavucontrol",
                 "pinentry",
                 "Wpa_gui",
+                "qalculate-gtk",
                 calc_class,
             },
             name = {
