@@ -260,6 +260,9 @@ au BufReadPost *
 \ |   exe "normal! g`\""
 \ | endif
 
+" Case insensitive completion in command line
+set wildignorecase
+
 "}}}
 
 "{{{ Exherbo-specific stuff
