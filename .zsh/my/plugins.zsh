@@ -41,9 +41,6 @@ lazy_omz lib/clipboard.zsh
 lazy_omz plugins/copybuffer/copybuffer.plugin.zsh
 lazy_omz plugins/copydir/copydir.plugin.zsh
 
-# mark/jump directories
-lazy_omz plugins/jump/jump.plugin.zsh
-
 # Archive management
 lazy_omz plugins/extract/extract.plugin.zsh
 lazy_omz plugins/extract/_extract silent
