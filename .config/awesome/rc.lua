@@ -502,7 +502,7 @@ awful.rules.rules = {
                 "copyq",
                 "Pavucontrol",
                 "pinentry",
-                "qalculate-gtk",
+                "Qalculate-gtk",
                 "Wpa_gui",
                 calc_class,
             },
