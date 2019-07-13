@@ -322,7 +322,7 @@ globalkeys = gears.table.join(
         { description = "open zim", group = "launcher" }),
 
     -- Clipboard manager
-    awful.key({ modkey }, "q", function() awful.spawn("copyq show") end,
+    awful.key({ modkey }, "v", function() awful.spawn("copyq show") end,
         { description = "clipboard history", group = "launcher" }),
 
     -- Screen lock
