@@ -24,6 +24,7 @@ xephyr_pid="$!"
 export DISPLAY="$display"
 echo "DISPLAY inside Xephyr: $DISPLAY"
 echo "Using $config"
+sleep 1s
 awesome -k "$config"
 
 if [ "$?" -eq 1 ]; then
