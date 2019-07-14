@@ -109,15 +109,6 @@ set cpoptions+=n
 " Colors
 highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
 
-" F4 for show menu
-if !has("gui_running")
-    :source $VIMRUNTIME/menu.vim
-    :set wildmenu
-    :set cpoptions-=<
-    :set wildcharm=<C-Z>
-    :map <F4> :emenu <C-Z>
-endif
-
 " List mode options
 set listchars=tab:▸·,eol:¬,precedes:«,extends:»
 nmap <leader>l :set list!<CR>
