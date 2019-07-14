@@ -500,6 +500,7 @@ awful.rules.rules = {
             },
             class = {
                 "copyq",
+                "Crow Translate",
                 "Pavucontrol",
                 "pinentry",
                 "Qalculate-gtk",
