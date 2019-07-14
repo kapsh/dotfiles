@@ -150,35 +150,6 @@ autocmd FileType * setlocal formatoptions-=cro
 
 "}}}
 
-" {{{ Russian layout
-set keymap=russian-jcukenwin
-
-" Default layout: en
-set iminsert=0
-set imsearch=0
-
-" For some reason doesn't set cursor color but without this <C-6> doesn't switch input language.
-function MyKeyMapHighlight()
-    if &iminsert == 0
-        hi lCursor ctermbg=DarkBlue guibg=DarkBlue
-    else
-        hi lCursor ctermbg=DarkGreen guibg=DarkGreen
-    endif
-endfunction
-
-" Init colors on start
-call MyKeyMapHighlight()
-
-" Set colors when changing buffers
-au WinEnter * :call MyKeyMapHighlight()
-
-" Bind keymap switching to C-6 in all modes
-cmap <silent> <C-^> <C-^>
-imap <silent> <C-^> <C-^>X<Esc>:call MyKeyMapHighlight()<CR>a<C-H>
-nmap <silent> <C-^> a<C-^><Esc>:call MyKeyMapHighlight()<CR>
-vmap <silent> <C-^> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
-"}}}
-
 "{{{ Sort this out
 
 " Space to reset search highilghts
