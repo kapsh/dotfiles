@@ -3,8 +3,6 @@
 echo "$DISPLAY" > "$HOME"/.xdisplay &
 export DESKTOP_SESSION="gnome"  # for icons in Qt apps
 
-pulseaudio --start &
-
 eval $(ssh-agent)
 
 # if wasm't set automatically
