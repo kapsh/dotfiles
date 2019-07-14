@@ -3,7 +3,7 @@
 [[ $# = 0 ]] && exit 1
 
 while true; do
-    ssh "$@"
+    TERM=xterm-256color ssh "$@"
     if [[ $? = 255 ]];
     then
         sleep 5s
