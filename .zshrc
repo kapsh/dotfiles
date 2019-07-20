@@ -35,7 +35,7 @@ zstyle ':completion:*' format '%F{yellow}%d%f'
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' list-suffixes true
-zstyle ':completion:*' matcher-list '+r:|[._-]=** r:|=**' '+m:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+' '+l:|=* r:|=*'
+zstyle ':completion:*' matcher-list  '+m:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+' '+l:|=* r:|=*'
 zstyle ':completion:*' max-errors 1
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
