@@ -1,18 +1,18 @@
 # Load third-party plugins.
 
-function lazy_snippet() {
+lazy_snippet() {
     snippet="${1:?location expected}"
     zplugin ice wait"0" silent "$@[2,-1]"
     zplugin snippet "${snippet}"
 }
 
 # Cherry-pick some part from oh-my-zsh
-function lazy_omz() {
+lazy_omz() {
     snippet="${1:?location expected}"
     lazy_snippet OMZ::"$snippet"
 }
 
-function lazy_plugin() {
+lazy_plugin() {
     plugin="${1:?location expected}"
     zplugin ice wait"0" silent "$@[2,-1]"
     zplugin light "${plugin}"

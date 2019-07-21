@@ -9,11 +9,11 @@ compdef _ls ll
 
 alias md='nocorrect mkdir -pv'
 
-function mkcd() {
+mkcd() {
     md "$1" && cd "$1"
 }
 
-function cdls() {
+cdls() {
     cd "$1" && ls
 }
 
@@ -23,7 +23,7 @@ compdef _mkdir md mkcd
 
 alias cp='cp -a'
 
-function cph() {
+cph() {
     cp "$@" .
 }
 
@@ -45,7 +45,7 @@ alias ddf='df -l -x tmpfs -x devtmpfs'
 
 alias grep='grep -T --color=auto --exclude-dir=.git'
 
-function nohup() {
+nohup() {
     command nohup >/dev/null "$@"
 }
 
