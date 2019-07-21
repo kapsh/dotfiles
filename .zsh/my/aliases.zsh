@@ -62,9 +62,6 @@ alias mscan='mscan2.rb -i system -l unused'
 
 # }}}
 
-# Stupid terminfo workaround
-alias ssh='TERM=xterm-256color ssh'
-
 # Hide window icons from output
 alias xprop='xprop -len 1000'
 

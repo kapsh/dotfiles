@@ -3,8 +3,6 @@ ZDOTDIR="${HOME}/.zsh"
 MY_ZSH="${ZDOTDIR}/my"
 ZSH_CACHE_DIR="${ZDOTDIR}/.cache"  # Used by plugins from oh-my-zsh
 
-source "${MY_ZSH}/tmuxed-ssh.zsh"
-
 # Common environment variables
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
@@ -97,6 +95,7 @@ source "${MY_ZSH}/fasd.zsh"
 source "${MY_ZSH}/filetypes.zsh"
 source "${MY_ZSH}/history.zsh"
 source "${MY_ZSH}/plugins.zsh"
+source "${MY_ZSH}/ssh_utils.zsh"
 
 zplugin ice atinit"zpcompinit"
 zplugin light zdharma/fast-syntax-highlighting
