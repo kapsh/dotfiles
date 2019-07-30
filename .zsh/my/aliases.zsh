@@ -87,3 +87,7 @@ clean_escape_codes() {
     sed -E "s|\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]||g" "$@"
 }
 
+view_tsv() {
+    column -t -s "	" "$@"
+}
+
