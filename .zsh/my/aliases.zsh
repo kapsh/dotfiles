@@ -46,7 +46,7 @@ alias ddf='df -l -x tmpfs -x devtmpfs'
 alias grep='grep -T --color=auto --exclude-dir=.git'
 
 nohup() {
-    command nohup >/dev/null "$@"
+    command nohup >/dev/null "$@" &
 }
 
 alias play='ansible-playbook'
