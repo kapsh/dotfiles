@@ -1,5 +1,6 @@
 # My aliases
 
+alias L=less
 
 MY_LS=(ls --color -C -v -p --group-directories-first)
 MY_LL=(${MY_LS} -lh)
