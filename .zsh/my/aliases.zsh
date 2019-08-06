@@ -24,10 +24,6 @@ compdef _mkdir md mkcd
 
 alias cp='cp -a'
 
-cph() {
-    cp "$@" .
-}
-
 alias -g ...='../..'
 alias -g ....='../../..'
 
