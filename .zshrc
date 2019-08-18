@@ -4,7 +4,7 @@ MY_ZSH="${ZDOTDIR}/my"
 ZSH_CACHE_DIR="${ZDOTDIR}/.cache"  # Used by plugins from oh-my-zsh
 
 # Common environment variables
-export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.cargo/bin:${PATH}"
 
 # zplugin init
 local -A ZPLGM
