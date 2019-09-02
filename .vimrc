@@ -81,8 +81,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "{{{ UI options
 
-colorscheme default
-
 set showcmd   " Show (partial) command in status line.
 set showmatch " Show matching brackets.
 set hidden    " Hide buffers when they are abandoned
