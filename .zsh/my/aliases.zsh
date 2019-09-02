@@ -88,3 +88,6 @@ view_tsv() {
     column -t -s "	" "$@"
 }
 
+copypath() {
+    realpath "$@" | clipcopy
+}
