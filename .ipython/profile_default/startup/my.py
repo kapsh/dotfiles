@@ -1,11 +1,15 @@
-import contextlib
+# Make these modules always available
 import datetime
 import itertools
 import os
 import shutil
 from pathlib import Path
 
+# Specific to this file
+import contextlib
 from IPython.core.magic import register_line_magic
+
+# Useful to have, but not critical
 
 with contextlib.suppress(ImportError):
     import bitmath
@@ -16,21 +20,27 @@ with contextlib.suppress(ImportError):
 with contextlib.suppress(ImportError):
     import requests
 
+with contextlib.suppress(ImportError):
+    import pendulum
 
-@register_line_magic
-def copy(line):
+try:
     import pyperclip
+except ImportError:
+    pyperclip = None
 
-    pyperclip.copy(eval(line))
+if pyperclip:
 
+    @register_line_magic
+    def copy(line):
+        pyperclip.copy(eval(line))
 
-@register_line_magic
-def paste(line):
-    import pyperclip
-
-    return pyperclip.paste()
+    @register_line_magic
+    def paste(line):
+        return pyperclip.paste()
 
 
 # Cleanup globals
 del contextlib
+del copy
+del paste
 del register_line_magic
