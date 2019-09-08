@@ -499,12 +499,14 @@ awful.rules.rules = {
             instance = {
             },
             class = {
-                "copyq",
                 "Crow Translate",
                 "Pavucontrol",
-                "pinentry",
                 "Qalculate-gtk",
                 "Wpa_gui",
+                "copyq",
+                "mpv",
+                "org-apache-jmeter-NewDriver",  -- startup splash
+                "pinentry",
                 calc_class,
             },
             name = {
@@ -512,10 +514,18 @@ awful.rules.rules = {
                 "Steam Guard - Computer Authorization Required",  -- pin-code window.
             },
             role = {
+                "About",  -- Thunderbird, Firefox
                 "AlarmWindow", -- Thunderbird's calendar.
-                "ConfigManager",  -- Thunderbird's about:config.
                 "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
             }
+        },
+        properties = { floating = true }
+    },
+
+    {
+        rule = {
+            class = "Apache JMeter",  -- graph plugins popup
+            name = "win1",
         },
         properties = { floating = true }
     },
