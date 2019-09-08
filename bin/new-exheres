@@ -22,9 +22,8 @@ new_cat() {
     cat="$2"
     categories_fn="${repo}/metadata/categories.conf"
 
-    echo "${cat}" >> "${categories_fn}"
+    echo "${cat}" >>"${categories_fn}"
     sort "${categories_fn}" -u -o "${categories_fn}"
 }
 
 main "$@"
-

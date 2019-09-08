@@ -35,4 +35,3 @@ else
     awesome -c "$config" &
     exit 0
 fi
-

@@ -11,9 +11,8 @@ apply_patches() {
     cd "${destination}" && git am
 }
 
-if [[ "${destination}" = "-" ]]; then
+if [[ "${destination}" == "-" ]]; then
     export_patches
 else
     export_patches | apply_patches
 fi
-
