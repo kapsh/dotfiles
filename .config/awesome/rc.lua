@@ -586,10 +586,10 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Autostart
-local xresources_name = "awesome.started"
-local xresources = awful.util.pread("xrdb -query") -- guard doesn't work, pread is deprecated
-if not xresources:match(xresources_name) then
-    awful.util.spawn_with_shell("xrdb -merge <<< " .. "'" .. xresources_name .. ":true'")
-    -- Execute once for X server
-    os.execute("dex --environment Awesome --autostart")
+local glib = require("lgi").GLib
+local guard_var = "_AWESOME_AUTOSTART_DONE"
+
+if glib.getenv(guard_var) == nil then
+    awful.spawn.easy_async("dex --environment Awesome --autostart")
+    glib.setenv(guard_var, 1)
 end
