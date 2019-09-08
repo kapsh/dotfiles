@@ -587,7 +587,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 local xresources_name = "awesome.started"
-local xresources = awful.util.pread("xrdb -query")
+local xresources = awful.util.pread("xrdb -query") -- guard doesn't work, pread is deprecated
 if not xresources:match(xresources_name) then
     awful.util.spawn_with_shell("xrdb -merge <<< " .. "'" .. xresources_name .. ":true'")
     -- Execute once for X server

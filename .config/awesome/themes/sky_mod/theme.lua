@@ -4,7 +4,11 @@
 -------------------------------
 -- If you want SVGs and extras, get them from garoth.com/awesome/sky-theme
 
-local awful = require("awful")
+local fs = require("gears.filesystem")
+
+local themedir = fs.get_themes_dir()
+local default_theme = themedir .. "/default"
+local sky_theme = themedir .. "/sky"
 
 -- BASICS
 local theme = {}
@@ -28,71 +32,72 @@ theme.border_focus  = "#729fcf"
 theme.border_marked = "#eeeeec"
 
 -- IMAGES
-theme.layout_fairh           = "/usr/share/awesome/themes/sky/layouts/fairh.png"
-theme.layout_fairv           = "/usr/share/awesome/themes/sky/layouts/fairv.png"
-theme.layout_floating        = "/usr/share/awesome/themes/sky/layouts/floating.png"
-theme.layout_magnifier       = "/usr/share/awesome/themes/sky/layouts/magnifier.png"
-theme.layout_max             = "/usr/share/awesome/themes/sky/layouts/max.png"
-theme.layout_fullscreen      = "/usr/share/awesome/themes/sky/layouts/fullscreen.png"
-theme.layout_tilebottom      = "/usr/share/awesome/themes/sky/layouts/tilebottom.png"
-theme.layout_tileleft        = "/usr/share/awesome/themes/sky/layouts/tileleft.png"
-theme.layout_tile            = "/usr/share/awesome/themes/sky/layouts/tile.png"
-theme.layout_tiletop         = "/usr/share/awesome/themes/sky/layouts/tiletop.png"
-theme.layout_spiral          = "/usr/share/awesome/themes/sky/layouts/spiral.png"
-theme.layout_dwindle         = "/usr/share/awesome/themes/sky/layouts/dwindle.png"
-theme.layout_cornernw        = "/usr/share/awesome/themes/sky/layouts/cornernw.png"
-theme.layout_cornerne        = "/usr/share/awesome/themes/sky/layouts/cornerne.png"
-theme.layout_cornersw        = "/usr/share/awesome/themes/sky/layouts/cornersw.png"
-theme.layout_cornerse        = "/usr/share/awesome/themes/sky/layouts/cornerse.png"
+theme.layout_fairh      = sky_theme .. "/layouts/fairh.png"
+theme.layout_fairv      = sky_theme .. "/layouts/fairv.png"
+theme.layout_floating   = sky_theme .. "/layouts/floating.png"
+theme.layout_magnifier  = sky_theme .. "/layouts/magnifier.png"
+theme.layout_max        = sky_theme .. "/layouts/max.png"
+theme.layout_fullscreen = sky_theme .. "/layouts/fullscreen.png"
+theme.layout_tilebottom = sky_theme .. "/layouts/tilebottom.png"
+theme.layout_tileleft   = sky_theme .. "/layouts/tileleft.png"
+theme.layout_tile       = sky_theme .. "/layouts/tile.png"
+theme.layout_tiletop    = sky_theme .. "/layouts/tiletop.png"
+theme.layout_spiral     = sky_theme .. "/layouts/spiral.png"
+theme.layout_dwindle    = sky_theme .. "/layouts/dwindle.png"
+theme.layout_cornernw   = sky_theme .. "/layouts/cornernw.png"
+theme.layout_cornerne   = sky_theme .. "/layouts/cornerne.png"
+theme.layout_cornersw   = sky_theme .. "/layouts/cornersw.png"
+theme.layout_cornerse   = sky_theme .. "/layouts/cornerse.png"
 
-theme.awesome_icon           = "/usr/share/awesome/themes/sky/awesome-icon.png"
+theme.awesome_icon      = sky_theme .. "/awesome-icon.png"
 
 -- from default for now...
-theme.menu_submenu_icon     = "/usr/share/awesome/themes/default/submenu.png"
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+theme.menu_submenu_icon     = default_theme .. "/submenu.png"
+theme.taglist_squares_sel   = default_theme .. "/taglist/squarefw.png"
+theme.taglist_squares_unsel = default_theme .. "/taglist/squarew.png"
 
 -- MISC
-theme.wallpaper             = function(s)
-        default_wp = "/usr/share/awesome/themes/sky/sky-background.png"
-        custom_wp = awful.util.get_xdg_config_home() .. "wallpaper"
-        if awful.util.file_readable(custom_wp) then
+theme.wallpaper = function(s)
+        default_wp = sky_theme .. "/sky-background.png"
+        custom_wp = fs.get_xdg_config_home() .. "wallpaper"
+        if fs.file_readable(custom_wp) then
             return custom_wp
         else
             return default_wp
         end
     end
+
 theme.taglist_squares       = "true"
 theme.titlebar_close_button = "true"
 theme.menu_height           = 20
 theme.menu_width            = 150
 
 -- Define the image to load
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus = "/usr/share/awesome/themes/default/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = default_theme .. "/titlebar/close_normal.png"
+theme.titlebar_close_button_focus = default_theme .. "/titlebar/close_focus.png"
 
-theme.titlebar_minimize_button_normal = "/usr/share/awesome/themes/default/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = "/usr/share/awesome/themes/default/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = default_theme .. "/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus  = default_theme .. "/titlebar/minimize_focus.png"
 
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive = "/usr/share/awesome/themes/default/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/default/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active = "/usr/share/awesome/themes/default/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_inactive = default_theme .. "/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_inactive = default_theme .. "/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_active = default_theme .. "/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_active = default_theme .. "/titlebar/ontop_focus_active.png"
 
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive = "/usr/share/awesome/themes/default/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/default/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active = "/usr/share/awesome/themes/default/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_inactive = default_theme .. "/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_inactive = default_theme .. "/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_active = default_theme .. "/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_active = default_theme .. "/titlebar/sticky_focus_active.png"
 
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive = "/usr/share/awesome/themes/default/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/default/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active = "/usr/share/awesome/themes/default/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_inactive = default_theme .. "/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_inactive = default_theme .. "/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_active = default_theme .. "/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_active = default_theme .. "/titlebar/floating_focus_active.png"
 
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive = "/usr/share/awesome/themes/default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_inactive = default_theme .. "/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_inactive = default_theme .. "/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_active = default_theme .. "/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_active = default_theme .. "/titlebar/maximized_focus_active.png"
 
 return theme
 
