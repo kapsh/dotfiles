@@ -26,7 +26,23 @@ dofile(confd .. "00errors.lua")
 
 -- Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gfs.get_configuration_dir() .. "themes/sky_mod/theme.lua")
+
+function load_theme(name)
+    local theme_path = gfs.get_configuration_dir() .. "themes/" .. name .. "/theme.lua"
+    if not gfs.file_readable(theme_path) then
+        theme_path = gfs.get_themes_dir() .. name .. "/theme.lua"
+    end
+    if not gfs.file_readable(theme_path) then
+        naughty.notify({
+            preset = naughty.config.presets.critical,
+            text = "Cannot find theme " .. name
+        })
+        theme_path = gfs.get_themes_dir() .. "default/theme.lua"
+    end
+    beautiful.init(theme_path)
+end
+
+load_theme("sky_mod")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
