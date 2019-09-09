@@ -333,7 +333,8 @@ globalkeys = gears.table.join(
 
 )
 
-clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
+clientkeys = awful.util.table.join(
+    awful.key({ modkey, }, "f",
     function(c)
         c.fullscreen = not c.fullscreen
         c:raise()
@@ -363,7 +364,7 @@ clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
             c.maximized = not c.maximized
             c:raise()
         end,
-        { description = "(un)maximize", group = "client" })),
+        { description = "(un)maximize", group = "client" }),
     awful.key({ modkey, "Control" }, "m",
         function (c)
             c.maximized_vertical = not c.maximized_vertical
@@ -376,6 +377,7 @@ clientkeys = awful.util.table.join(awful.key({ modkey, }, "f",
             c:raise()
         end ,
         { description = "(un)maximize horizontally", group = "client" })
+    )
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
