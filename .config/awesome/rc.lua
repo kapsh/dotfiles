@@ -14,33 +14,11 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-    naughty.notify({
-        preset = naughty.config.presets.critical,
-        title = "Oops, there were errors during startup!",
-        text = awesome.startup_errors
-    })
-end
+local gfs = gears.filesystem
+local confd = gfs.get_configuration_dir() .. "rc.d/"
+local host_confd = confd .. awesome.hostname .. "/"
 
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function(err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then return end
-        in_error = true
-
-        naughty.notify({
-            preset = naughty.config.presets.critical,
-            title = "Oops, an error happened!",
-            text = tostring(err)
-        })
-        in_error = false
-    end)
-end
+dofile(confd .. "00errors.lua")
 
 -- Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -585,11 +563,4 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- Autostart
-local glib = require("lgi").GLib
-local guard_var = "_AWESOME_AUTOSTART_DONE"
-
-if glib.getenv(guard_var) == nil then
-    awful.spawn.easy_async("dex --environment Awesome --autostart")
-    glib.setenv(guard_var, 1)
-end
+dofile(confd .. "90autorun.lua")
