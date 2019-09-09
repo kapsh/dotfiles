@@ -70,6 +70,7 @@ theme.taglist_squares = "true"
 theme.titlebar_close_button = "true"
 theme.menu_height = 20
 theme.menu_width = 150
+theme.maximized_hide_border = true
 
 -- Define the image to load
 theme.titlebar_close_button_normal = default_theme .. "/titlebar/close_normal.png"
