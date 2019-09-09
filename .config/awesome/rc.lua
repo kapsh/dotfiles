@@ -22,7 +22,7 @@ dofile(confd .. "00errors.lua")
 
 -- Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_configuration_dir() .. "themes/sky_mod/theme.lua")
+beautiful.init(gfs.get_configuration_dir() .. "themes/sky_mod/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -347,14 +347,14 @@ globalkeys = gears.table.join(
                 prompt = "Run Lua code: ",
                 textbox = awful.screen.focused().mypromptbox.widget,
                 exe_callback = awful.util.eval,
-                history_path = awful.util.get_cache_dir() .. "/history_eval"
+                history_path = gfs.get_cache_dir() .. "/history_eval"
             }
         end,
         { description = "lua execute prompt", group = "awesome" })
 
 )
 
-clientkeys = awful.util.table.join(
+clientkeys = gears.table.join(
     awful.key({ modkey, }, "f",
     function(c)
         c.fullscreen = not c.fullscreen
