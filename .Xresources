@@ -15,5 +15,5 @@ XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 *VT100*translations: #override Meta <Btn1Up>: exec-formatted("google-chrome-stable '%t'", PRIMARY)
 
 !Xcursor.size:       16
-Xcursor.theme:      white-classicia++
+Xcursor.theme:      Adwaita
 
