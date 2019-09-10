@@ -1,6 +1,8 @@
 -- Autostart programs first time Awesome starts
 
+local awful = require("awful")
 local glib = require("lgi").GLib
+
 local guard_var = "_AWESOME_AUTOSTART_DONE"
 
 -- Run .config/autostart/.desktop
