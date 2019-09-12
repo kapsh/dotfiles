@@ -56,6 +56,7 @@
 
 [diff]
     algorithm = histogram
+	renames = copies
 
 [rebase]
     autosquash = true
@@ -65,3 +66,7 @@
 
 [protocol]
 	version = 2
+
+[advice]
+	detachedHead = no
+	statusHints = no
