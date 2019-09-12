@@ -28,7 +28,7 @@ alias -g ...='../..'
 alias -g ....='../../..'
 
 alias rm='rm -Ir'
-alias scp='scp -r'
+alias scp='scp -r -o Compression=no'
 
 alias free='free -th'
 alias du='du -hsc'
