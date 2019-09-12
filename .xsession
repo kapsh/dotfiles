@@ -25,8 +25,8 @@ compton -c -C  -I 0.2 -O 0.2 -f -b
 
 xscreensaver -no-splash &
 
-xset r rate 300
-xset m 4
+xset r rate 250
+xset m 10
 
 # WM
 exec awesome
