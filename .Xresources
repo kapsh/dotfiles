@@ -1,8 +1,9 @@
 
 XTerm*background:   black
 XTerm*foreground:   white
-XTerm*faceName:     xft:monospace:size=10
-XTerm*faceNameDoublesize:   xft:monospace
+! droid fonts are broken (or syntax is incorrect)
+! XTerm*faceName:     xft:Monospace:size=10
+! XTerm*faceNameDoublesize:   xft:Monospace
 XTerm*utf8:         2
 !XTerm*faceSize:        10
 XTerm*metaSendsEscape:  true
