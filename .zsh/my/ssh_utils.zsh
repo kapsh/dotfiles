@@ -8,7 +8,7 @@ ssh-retry() {
         return 1
     fi
 
-    local timeout="5s"
+    local timeout="3s"
     while ! command ssh "$@"; do
         echo "Retrying in ${timeout}..." >&2
         sleep "${timeout}"
