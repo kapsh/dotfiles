@@ -1,6 +1,10 @@
 rofi.terminal: kitty
 
+{% if yadm.hostname == "hedgehog" %}
 rofi.font: mono 14
+{% else %}
+rofi.font: mono 10
+{% endif %}
 rofi.theme: Arc-Dark
 rofi.show-icons: true
 rofi.fake-transparency: true
