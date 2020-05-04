@@ -32,7 +32,8 @@ if pyperclip:
 
     @register_line_magic
     def copy(line):
-        pyperclip.copy(eval(line))
+        if line:
+            pyperclip.copy(eval(line))
 
     @register_line_magic
     def paste(line):
