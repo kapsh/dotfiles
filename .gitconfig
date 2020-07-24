@@ -70,3 +70,7 @@
 [advice]
 	detachedHead = no
 	statusHints = no
+
+[pull]
+	ff = only
+
