@@ -567,6 +567,7 @@ awful.rules.rules = {
                 "mpv",
                 "org-apache-jmeter-NewDriver",  -- startup splash
                 "pinentry",
+                "vokoscreenNG",
                 calc_class,
             },
             name = {
