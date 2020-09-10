@@ -39,9 +39,9 @@ if pyperclip:
     def paste(line):
         return pyperclip.paste()
 
+    del copy
+    del paste
 
-# Cleanup globals
 del contextlib
-del copy
-del paste
 del register_line_magic
+
