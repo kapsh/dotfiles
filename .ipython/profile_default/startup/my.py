@@ -1,5 +1,6 @@
 # Make these modules always available
 import itertools
+import logging
 import os
 import shutil
 from datetime import datetime, timedelta
@@ -27,6 +28,9 @@ try:
     import pyperclip
 except ImportError:
     pyperclip = None
+
+# https://github.com/ipython/ipython/issues/10946
+logging.getLogger('parso').setLevel(logging.WARNING)
 
 if pyperclip:
 
