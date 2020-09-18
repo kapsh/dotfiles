@@ -10,7 +10,7 @@
     # Shortcuts for simple commands
     co = checkout -q
     st = status -sb
-    commend = commit --amend
+    commend = commit --amend --no-edit
     staged = diff --staged
 
     lg = log --graph --abbrev-commit --decorate --format=format:'\
