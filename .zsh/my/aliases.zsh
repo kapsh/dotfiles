@@ -91,5 +91,5 @@ view_tsv() {
 }
 
 copypath() {
-    realpath "$@" | clipcopy
+    realpath "$@" | tr -d "\n" | clipcopy
 }
