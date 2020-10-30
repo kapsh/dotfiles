@@ -1,6 +1,6 @@
 rofi.terminal: kitty
 
-{% if yadm.hostname == "hedgehog" %}
+{% if yadm.hostname == "lynx" %}
 rofi.font: mono 14
 {% else %}
 rofi.font: mono 10
