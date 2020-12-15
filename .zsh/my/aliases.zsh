@@ -53,10 +53,6 @@ compdef _ansible-playbook play
 
 # {{{ Exherbo specific
 
-# Correction for these commands doesn't make sense
-alias eclectic='nocorrect eclectic'
-alias cave='nocorrect noglob cave'
-
 alias mscan='mscan2.rb -i system -l unused'
 
 # }}}
