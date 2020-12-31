@@ -18,6 +18,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Popup clients
+local poppin = require("poppin")
+
 local gfs = gears.filesystem
 local confd = gfs.get_configuration_dir() .. "rc.d/"
 local host_confd = confd .. awesome.hostname .. "/"
@@ -47,9 +50,6 @@ load_theme("sky_mod")
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
 editor_cmd = terminal .. " " .. "vi"
-
-calc_class = "jupyter-qtconsole"
-calc_cmd = "jupyter qtconsole"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -363,28 +363,17 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "F12", function() awful.spawn("xscreensaver-command -lock") end,
         { description = "lock screen", group = "launcher" }),
 
-    -- Calculator
+    -- ipython
     awful.key({ modkey }, "a",
         function()
-            -- Find running calculator window and bring it to front.
-            -- awful.client.run_or_raise could be used, but it will jump to it's tag.
-            local find_calc = function(c)
-                return awful.rules.match(c, {class = calc_class})
-            end
-            for c in awful.client.iterate(find_calc) do
-                -- TODO horrrible
-                local s = awful.screen.focused()
-                c:move_to_screen(s)
-                c:move_to_tag(s.selected_tag)
-                client.focus = c
-                c:raise()
-                found = true
-            end
-            if not found then
-                awful.spawn(calc_cmd)
-            end
+            poppin.pop(
+                "ipython console",
+                "jupyter-qtconsole",
+                "center",
+                { titlebars_enabled = true, skip_taskbar = true }
+            )
         end,
-        {description = "run calculator", group = "launcher"}
+        {description = "ipython console", group = "launcher"}
     ),
 
     awful.key({ modkey }, "x",
@@ -568,7 +557,6 @@ awful.rules.rules = {
                 "org-apache-jmeter-NewDriver",  -- startup splash
                 "pinentry",
                 "vokoscreenNG",
-                calc_class,
             },
             name = {
                 "Event Tester", -- xev.
@@ -594,7 +582,6 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-                calc_class,
             }
         },
         properties = {titlebars_enabled = true}
