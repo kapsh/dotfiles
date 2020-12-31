@@ -1,22 +1,6 @@
 
-XTerm*background:   black
-XTerm*foreground:   white
-! droid fonts are broken (or syntax is incorrect)
-! XTerm*faceName:     xft:Monospace:size=10
-! XTerm*faceNameDoublesize:   xft:Monospace
-XTerm*utf8:         2
-!XTerm*faceSize:        10
-XTerm*metaSendsEscape:  true
-XTerm*jumpScroll:   true
-XTerm*saveLines:    10000
-*VT100*scrollKey:   true
-*VT100*scrollTtyOutput: false
-! Double-click to select URL, alt+click to open selection in browser
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-*VT100*translations: #override Meta <Btn1Up>: exec-formatted("google-chrome-stable '%t'", PRIMARY)
-
 Xcursor.size:       32
-Xcursor.theme:      Adwaita
+Xcursor.theme:      capitaine-cursors-light
 
 {% if yadm.hostname == "lynx" %}
 Xft.dpi: 140
