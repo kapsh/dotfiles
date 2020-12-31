@@ -1,7 +1,7 @@
 #!/bin/sh
 
 display=":42" # I hope this display is free
-ssize="1024x768"
+ssize="1600x1200"
 
 if [ -n "$1" ]; then
     # Use config provided in parameter
