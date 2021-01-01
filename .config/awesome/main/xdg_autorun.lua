@@ -1,5 +1,4 @@
 -- Autostart programs first time Awesome starts
-
 local awful = require("awful")
 local glib = require("lgi").GLib
 
