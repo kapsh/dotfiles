@@ -168,22 +168,6 @@ local global_keys = gtable.join(
         {description = "restore minimized", group = "client"}
     ),
 
-    -- Run prompt
-    awful.key({ modkey }, "r", function() awful.spawn("rofi -modi run,drun -show run") end,
-        { description = "run...", group = "launcher" }),
-
-    -- Another run prompt
-    awful.key({ modkey }, "p", function() awful.spawn("rofi -modi run,drun -show drun") end,
-        { description = "run desktop file...", group = "launcher" }),
-
-    -- Built-in run prompt as fallback
-    awful.key({ modkey, "Shift" }, "r", function () awful.screen.focused().mypromptbox:run() end,
-        {description = "run prompt", group = "launcher"}),
-
-    -- Window search
-    awful.key({ modkey }, "/", function() awful.spawn("rofi -modi window -show window") end,
-        { description = "windows", group = "launcher" }),
-
     -- Zim
     awful.key({ modkey }, "z", function() awful.spawn("zim") end,
         { description = "open zim", group = "launcher" }),
@@ -209,6 +193,20 @@ local global_keys = gtable.join(
         {description = "ipython console", group = "launcher"}
     )
 
+)
+
+local app_launchers = gtable.join(
+    awful.key({ modkey }, "/", function() awful.spawn("rofi -modi window -show window") end,
+        { description = "windows", group = "launcher" }),
+
+    awful.key({ modkey }, "r", function() awful.spawn("rofi -modi run,drun -show run") end,
+        { description = "run...", group = "launcher" }),
+
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -modi run,drun -show drun") end,
+        { description = "run desktop file...", group = "launcher" }),
+
+    awful.key({ modkey, "Shift" }, "r", function () awful.screen.focused().mypromptbox:run() end,
+        {description = "run prompt", group = "launcher"})
 )
 
 local function keycode(n)
@@ -271,6 +269,11 @@ end
 for i = 1, 10 do -- TODO 10 is 0
     global_keys = gtable.join( global_keys, tag_bindings(i))
 end
+
+global_keys = gtable.join(
+    app_launchers,
+    global_keys
+)
 
 interact.global_keys = global_keys
 
