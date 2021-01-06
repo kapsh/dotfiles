@@ -169,11 +169,11 @@ local global_keys = gtable.join(
     ),
 
     -- Run prompt
-    awful.key({ modkey }, "r", function() awful.spawn("rofi -show run") end,
+    awful.key({ modkey }, "r", function() awful.spawn("rofi -modi run,drun -show run") end,
         { description = "run...", group = "launcher" }),
 
     -- Another run prompt
-    awful.key({ modkey }, "p", function() awful.spawn("rofi -show drun") end,
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -modi run,drun -show drun") end,
         { description = "run desktop file...", group = "launcher" }),
 
     -- Built-in run prompt as fallback
@@ -181,7 +181,7 @@ local global_keys = gtable.join(
         {description = "run prompt", group = "launcher"}),
 
     -- Window search
-    awful.key({ modkey }, "/", function() awful.spawn("rofi -show window") end,
+    awful.key({ modkey }, "/", function() awful.spawn("rofi -modi window -show window") end,
         { description = "windows", group = "launcher" }),
 
     -- Zim
