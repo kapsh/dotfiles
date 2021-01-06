@@ -1,0 +1,21 @@
+/* vim: set ft=css : */
+configuration {
+	theme: "Arc-Dark";
+	show-icons: true;
+	sidebar-mode: true;
+{% if yadm.hostname == "lynx" %}
+	font: "mono 14";
+{% else %}
+	font: "mono 10";
+{% endif %}
+
+    /* possible positions:
+    1 2 3
+    8 0 4
+    7 6 5
+    */
+	location: 0;
+
+	terminal: "kitty";
+	click-to-exit: true;
+}
