@@ -209,69 +209,63 @@ local app_launchers = gtable.join(
         {description = "run prompt", group = "launcher"})
 )
 
-local function keycode(n)
-    return "#" .. n + 9
-end
-
-local function tag_bindings(tagnum)
-    local add_help = tagnum == 1
+local function tag_bindings(numkey)
+    local tagindex = numkey == 0 and 10 or numkey -- TODO crutch
 
     return gtable.join(
-    -- View tag only.
-    awful.key({ modkey }, keycode(tagnum),
-    function()
-        local screen = awful.screen.focused()
-        local tag = screen.tags[tagnum]
-        if tag then
-            tag:view_only()
-        end
-    end,
-    add_help and { description = "view tag #n", group = "tags" }),
+        awful.key({ modkey }, numkey,
+        function()
+            local screen = awful.screen.focused()
+            local tag = screen.tags[tagindex]
+            if tag then
+                tag:view_only()
+            end
+        end,
+        { description = "view tag #n", group = "tags" }),
 
-        -- Toggle tag display.
-        awful.key({ modkey, "Control" }, keycode(tagnum),
+        awful.key({ modkey, "Control" }, numkey,
             function()
                 local screen = awful.screen.focused()
-                local tag = screen.tags[tagnum]
+                local tag = screen.tags[tagindex]
                 if tag then
                     awful.tag.viewtoggle(tag)
                 end
             end,
-            add_help and { description = "toggle tag #n", group = "tags" }),
+            { description = "toggle tag #n", group = "tags" }),
 
-        -- Move client to tag.
-        awful.key({ modkey, "Shift" },keycode(tagnum),
+        awful.key({ modkey, "Shift" }, numkey,
             function()
                 if client.focus then
-                    local tag = client.focus.screen.tags[tagnum]
+                    local tag = client.focus.screen.tags[tagindex]
                     if tag then
                         client.focus:move_to_tag(tag)
                     end
                 end
             end,
-            add_help and { description = "move focused client to tag #n", group = "tags" }),
+            { description = "move focused client to tag #n", group = "tags" }),
 
-        -- Toggle tag on focused client.
-        awful.key({ modkey, "Control", "Shift" }, keycode(tagnum),
+        awful.key({ modkey, "Control", "Shift" }, numkey,
             function()
                 if client.focus then
-                    local tag = client.focus.screen.tags[tagnum]
+                    local tag = client.focus.screen.tags[tagindex]
                     if tag then
                         client.focus:toggle_tag(tag)
                     end
                 end
             end,
-            add_help and {description = "toggle focused client on tag #n", group = "tags"}
+            {description = "toggle focused client on tag #n", group = "tags"}
         )
-        )
+    )
 end
 
-for i = 1, 10 do -- TODO 10 is 0
-    global_keys = gtable.join( global_keys, tag_bindings(i))
+local tag_keys = {}
+for i = 0, 9 do
+    tag_keys = gtable.join(tag_keys, tag_bindings(i))
 end
 
 global_keys = gtable.join(
     app_launchers,
+    tag_keys,
     global_keys
 )
 
