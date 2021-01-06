@@ -209,6 +209,24 @@ local app_launchers = gtable.join(
         {description = "run prompt", group = "launcher"})
 )
 
+local take_screenshot = gtable.join(
+    awful.key(
+        {modkey}, "Print",
+        function() awful.spawn("flameshot gui") end,
+        {description = "screenshot selection", group = "screenshot"}
+    ),
+    awful.key(
+        {modkey, "Control"}, "Print",
+        function() awful.spawn("flameshot full") end,
+        {description = "screenshot all", group = "screenshot"}
+    ),
+    awful.key(
+        {modkey, "Shift"}, "Print",
+        function() awful.spawn("flameshot launcher") end,
+        {description = "screenshot custom", group = "screenshot"}
+    )
+)
+
 local function tag_bindings(numkey)
     local tagindex = numkey == 0 and 10 or numkey -- TODO crutch
 
@@ -266,6 +284,7 @@ end
 global_keys = gtable.join(
     app_launchers,
     tag_keys,
+    take_screenshot,
     global_keys
 )
 
