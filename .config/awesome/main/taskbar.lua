@@ -22,9 +22,6 @@ local menubutton = awful.widget.launcher({
 })
 
 awful.screen.connect_for_each_screen(function(s)
-    -- Each screen has its own tag table.
-    awful.tag({"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, s, awful.layout.layouts[2])
-
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt() -- used for run prompt
     local layoutindicator = awful.widget.layoutbox(s)
