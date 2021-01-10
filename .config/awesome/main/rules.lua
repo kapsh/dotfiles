@@ -1,9 +1,8 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
-local gears = require("gears")
+local gtable = require("gears.table")
 
--- TODO add to new
-local other = {
+local specrules = {
     -- Floating clients.
     {
         rule_any = {
@@ -40,25 +39,20 @@ local other = {
 
 }
 
-local rules = {}
-
---- Basic configuration for all clients
-function rules.default()
-    return {
-        {
-            rule = {},
-            properties = {
-                border_width = beautiful.border_width,
-                border_color = beautiful.border_normal,
-                focus = awful.client.focus.filter,
-                raise = true,
-                keys = RC.interact.client_keys,
-                buttons = RC.interact.client_buttons,
-                screen = awful.screen.preferred,
-                placement = awful.placement.no_overlap + awful.placement.no_offscreen,
-            },
+local defaults = {
+    {
+        rule = {},
+        properties = {
+            border_width = beautiful.border_width,
+            border_color = beautiful.border_normal,
+            focus = awful.client.focus.filter,
+            raise = true,
+            keys = RC.interact.client_keys,
+            buttons = RC.interact.client_buttons,
+            screen = awful.screen.preferred,
+            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
         },
     }
-end
+}
 
-return rules.default()
+return gtable.join(defaults, specrules)
