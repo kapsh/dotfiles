@@ -10,7 +10,7 @@ export DESKTOP_SESSION="gnome"  # for icons in Qt apps
 numlockx on &
 
 # Compositing
-compton -c -C  -I 0.2 -O 0.2 -f -b
+picom -b &
 
 xscreensaver -no-splash &
 
