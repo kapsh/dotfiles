@@ -4,7 +4,7 @@ echo "$DISPLAY" > "$HOME"/.xdisplay &
 export DESKTOP_SESSION="gnome"  # for icons in Qt apps
 
 # Set layout
-myxkbmap && kbdd &
+"${HOME}"/bin/myxkbmap && kbdd &
 
 # Turn on numlock
 numlockx on &
