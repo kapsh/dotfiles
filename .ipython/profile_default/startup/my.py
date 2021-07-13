@@ -3,7 +3,7 @@ import itertools
 import logging
 import os
 import shutil
-from datetime import datetime, timedelta
+import datetime
 from pathlib import Path
 
 # Specific to this file
