@@ -56,8 +56,6 @@ lazy_plugin Tarrasch/zsh-bd
 
 lazy_plugin gangleri/pipenv
 
-lazy_plugin hcgraf/zsh-sudo
-
 lazy_plugin mollifier/cd-gitroot
 
 lazy_plugin oz/safe-paste
