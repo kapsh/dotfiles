@@ -48,9 +48,6 @@ nohup() {
     command nohup >/dev/null "$@" &
 }
 
-alias play='ansible-playbook'
-compdef _ansible-playbook play
-
 # {{{ Exherbo specific
 
 alias mscan='mscan2.rb -i system -l unused'
