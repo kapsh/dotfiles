@@ -1,6 +1,5 @@
 /* vim: set ft=css : */
 configuration {
-	theme: "Arc-Dark";
 	show-icons: true;
 	sidebar-mode: true;
 {% if yadm.hostname == "lynx" %}
@@ -19,3 +18,4 @@ configuration {
 	terminal: "kitty";
 	click-to-exit: true;
 }
+@theme "Arc-Dark"
