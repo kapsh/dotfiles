@@ -15,7 +15,7 @@ awful.layout.layouts = {
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     awful.tag(
-        {"1: main", "2: web", "3: dev", "4: work", "5", "6", "7", "8: gm", "9: msg", "0: mon"},
+        {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"},
         s,
         awful.layout.suit.tile
     )
