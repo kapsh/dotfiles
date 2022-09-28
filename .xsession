@@ -3,17 +3,15 @@
 echo "$DISPLAY" > "$HOME"/.xdisplay &
 export DESKTOP_SESSION="gnome"  # for icons in Qt apps
 
-# Set layout
-"${HOME}"/bin/myxkbmap && kbdd &
+# export QT_QPA_PLATFORMTHEME=qt5ct # TODO breaks tray icons
 
-# Turn on numlock
+"${HOME}"/bin/myxkbmap &
+
 numlockx on &
 
-# Compositing
 picom -b &
 
 xscreensaver -no-splash &
 
-xset r rate 250
-xset m 10
+pipewire >/tmp/pipewire.log &
 
