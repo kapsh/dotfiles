@@ -7,11 +7,11 @@
 
 [alias]
 
-    # Shortcuts for simple commands
     co = checkout -q
     st = status -sb
-    commend = commit --amend --no-edit
+    amend = commit --amend --no-edit
     staged = diff --staged
+    unstage = reset HEAD --
 
     lg = log --graph --abbrev-commit --decorate --format=format:'\
 %C(bold blue)%h%C(reset) \
@@ -23,12 +23,10 @@
 %C(yellow)(%ai)%C(reset)\
 %n'
 
-    # Remove specified file from staged changes
-    unstage = reset HEAD --
-
 [core]
     excludesfile = .config/global_gitignore
     quotePath = false
+    pager = delta
 
 [pager]
     branch = false
@@ -36,28 +34,20 @@
 
     tag = less -F
 
-    # Is there a way to use variable for this?
-    diff = diff-so-fancy | less --tabs=4 -R
-    log = diff-so-fancy | less --tabs=4 -R
-    show = diff-so-fancy | less --tabs=4 -R
+[interactive]
+    diffFilter = delta --color-only
 
-[color "diff-highlight"]
-    oldNormal = red
-    oldHighlight = red 52
-    newNormal = green
-    newHighlight = green 22
+[delta]
+    navigate = true
+    light = false
 
-[color "diff"]
-    meta = yellow
-    frag = magenta bold
-    commit = yellow bold
-    old = red
-    new = green
-    whitespace = red reverse
+[merge]
+    conflictstyle = diff3
 
 [diff]
     algorithm = histogram
 	renames = copies
+    colorMoved = default
 
 [rebase]
     autosquash = true
@@ -75,5 +65,3 @@
 [pull]
 	ff = only
 
-[init]
-	defaultBranch = master
