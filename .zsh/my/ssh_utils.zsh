@@ -1,12 +1,6 @@
-# Wrappers around ssh command
-
-alias ssh="TERM=xterm-256color ssh-retry"
 
 ssh-retry() {
-    if [[ $# == 0 ]]; then
-        echo "ssh: arguments missing" >&2
-        return 1
-    fi
+    : "${@:?args required}"
 
     local timeout="3s"
     while ! command ssh "$@"; do
@@ -16,14 +10,13 @@ ssh-retry() {
 }
 
 tssh() {
-    if [[ $# == 0 ]]; then
-        echo "tssh: arguments missing" >&2
-        return 1
-    fi
+    : "${@:?args required}"
 
-    ssh -t "${@}" \
-        "tmux new -A -s 'ssh-client'"
+    ssh-retry -t "${@}" \
+        "tmux new -A -s ssh-${USER}"
 }
+
+alias ssh=ssh-retry
 
 # TODO completion does not work
 compdef _ssh ssh-retry=ssh tssh=ssh
