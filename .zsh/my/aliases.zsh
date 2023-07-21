@@ -5,11 +5,11 @@ alias H=head
 alias T=tail
 alias S=sort
 
-MY_LS=(ls --color -C -v -p --group-directories-first)
-MY_LL=(${MY_LS} -lh)
-alias ls="${MY_LS}"
-alias ll="${MY_LL}"
+_my_ls=(ls --color -C -v -p --group-directories-first)
+alias ls="${_my_ls[*]}"
+alias ll="${_my_ls[*]} -lh"
 compdef _ls ll
+unset _my_ls
 
 alias md='nocorrect mkdir -pv'
 
@@ -35,10 +35,8 @@ alias scp='scp -r -o Compression=no'
 
 alias free='free -th'
 alias du='du -hsc'
-alias df='df -h'
-alias ddf='df -l -x tmpfs -x devtmpfs'
+alias dfh='df -h -l -x tmpfs -x devtmpfs'
 
-(( $+commands[nvim] )) && alias vim=nvim
 (( $+commands[colordiff] )) && alias diff=colordiff
 (( $+commands[pinfo] )) && alias info=pinfo
 (( $+commands[prettyping] )) && alias pping='prettyping --nolegend'
@@ -49,18 +47,8 @@ nohup() {
     command nohup >/dev/null "$@" &
 }
 
-# {{{ Exherbo specific
-
-alias mscan='mscan2.rb -i system -l unused'
-
-# }}}
-
 # Hide window icons from output
 alias xprop='xprop -len 1000'
-
-# Wildcards should be passed to these programs literaly
-alias locate='noglob locate'
-alias find='noglob find'
 
 # Keep this last so that grc can override existing aliases.
 grc_aliases="/etc/grc/grc.zsh"
@@ -73,7 +61,8 @@ unset grc_aliases
 unset MY_LS MY_LL
 
 ts2date() {
-    date -d "@$1"
+    local ts="${1:?}"
+    date -d "@${ts::10}"
 }
 
 clean_escape_codes() {
