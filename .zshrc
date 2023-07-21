@@ -94,6 +94,7 @@ source "${MY_ZSH}/colored_man_pages.zsh"
 source "${MY_ZSH}/filetypes.zsh"
 source "${MY_ZSH}/history.zsh"
 source "${MY_ZSH}/plugins.zsh"
+source "${MY_ZSH}/pyenv.zsh"
 source "${MY_ZSH}/ssh_utils.zsh"
 
 zplugin ice atinit"zpcompinit"
