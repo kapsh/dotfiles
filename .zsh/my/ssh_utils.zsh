@@ -13,7 +13,7 @@ tssh() {
     : "${@:?args required}"
 
     ssh-retry -t "${@}" \
-        "tmux new -A -s ssh-${USER}"
+        "tmux -u new -A -s ssh-${USER}"
 }
 
 alias ssh=ssh-retry
