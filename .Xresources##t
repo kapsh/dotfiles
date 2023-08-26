@@ -1,7 +1,0 @@
-
-Xcursor.size:       32
-Xcursor.theme:      capitaine-cursors-light
-
-{% if yadm.hostname == "lynx" %}
-Xft.dpi: 140
-{% endif %}
