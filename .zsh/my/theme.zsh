@@ -13,5 +13,5 @@ zstyle :prompt:pure:git:branch color yellow
 zstyle :prompt:pure:git:dirty color red
 
 # Load `pure` prompt
-zplugin ice pick "async.zsh" src "pure.zsh"
-zplugin light sindresorhus/pure
+zinit ice pick "async.zsh" src "pure.zsh"
+zinit light sindresorhus/pure

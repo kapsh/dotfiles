@@ -2,8 +2,8 @@
 
 lazy_snippet() {
     snippet="${1:?location expected}"
-    zplugin ice wait"0" silent "$@[2,-1]"
-    zplugin snippet "${snippet}"
+    zinit ice wait"0" silent "$@[2,-1]"
+    zinit snippet "${snippet}"
 }
 
 # Cherry-pick some part from oh-my-zsh
@@ -14,8 +14,8 @@ lazy_omz() {
 
 lazy_plugin() {
     plugin="${1:?location expected}"
-    zplugin ice wait"0" silent "$@[2,-1]"
-    zplugin light "${plugin}"
+    zinit ice wait"0" silent "$@[2,-1]"
+    zinit light "${plugin}"
 }
 
 # Bring back background job with ^Z
@@ -39,7 +39,6 @@ lazy_omz plugins/cp/cp.plugin.zsh
 # Clipboard utilities
 lazy_omz lib/clipboard.zsh
 lazy_omz plugins/copybuffer/copybuffer.plugin.zsh
-lazy_omz plugins/copydir/copydir.plugin.zsh
 
 # Archive management
 lazy_omz plugins/extract/extract.plugin.zsh

@@ -6,18 +6,18 @@ ZSH_CACHE_DIR="${ZDOTDIR}/.cache"  # Used by plugins from oh-my-zsh
 # Common environment variables
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.cargo/bin:${PATH}"
 
-# zplugin init
-local -A ZPLGM
-ZPLGM[HOME_DIR]="${ZDOTDIR}/.zplugin"
-ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/zplugin"
-source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
+# https://github.com/zdharma-continuum/zinit#manual
+local -A ZINIT
+ZINIT[HOME_DIR]="${ZDOTDIR}/plugins"
+ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/zinit"
+source "${ZINIT[BIN_DIR]}/zinit.zsh"
 
 # Theme
 source "${MY_ZSH}/theme.zsh"
 
 # Should be loaded before completion list-colors
-zplugin ice atclone"dircolors -b LS_COLORS > colors.zsh" atpull'%atclone' pick"colors.zsh"
-zplugin light trapd00r/LS_COLORS
+zinit ice atclone"dircolors -b LS_COLORS > colors.zsh" atpull'%atclone' pick"colors.zsh"
+zinit light trapd00r/LS_COLORS
 
 # TODO sort out completion and correction options
 
@@ -64,7 +64,7 @@ setopt long_list_jobs
 # required for using menuselect
 zmodload -i zsh/complist
 # maybe rewrite smth manyally in future
-zplugin snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZ::lib/key-bindings.zsh
 # Pick item but stay in menu
 bindkey -M menuselect "+" accept-and-menu-complete
 
@@ -97,6 +97,5 @@ source "${MY_ZSH}/plugins.zsh"
 source "${MY_ZSH}/pyenv.zsh"
 source "${MY_ZSH}/ssh_utils.zsh"
 
-zplugin ice atinit"zpcompinit"
-zplugin light zdharma/fast-syntax-highlighting
-
+zinit ice atinit"zpcompinit"
+zinit light zdharma-continuum/fast-syntax-highlighting
