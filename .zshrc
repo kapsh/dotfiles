@@ -15,10 +15,6 @@ source "${ZINIT[BIN_DIR]}/zinit.zsh"
 # Theme
 source "${MY_ZSH}/theme.zsh"
 
-# Should be loaded before completion list-colors
-zinit ice atclone"dircolors -b LS_COLORS > colors.zsh" atpull'%atclone' pick"colors.zsh"
-zinit light trapd00r/LS_COLORS
-
 # TODO sort out completion and correction options
 
 zstyle ':completion:*' completer _oldlist _expand _complete _ignored _match _correct _approximate _prefix
@@ -91,7 +87,6 @@ setopt equals
 
 source "${MY_ZSH}/aliases.zsh"
 source "${MY_ZSH}/colored_man_pages.zsh"
-source "${MY_ZSH}/filetypes.zsh"
 source "${MY_ZSH}/history.zsh"
 source "${MY_ZSH}/plugins.zsh"
 source "${MY_ZSH}/pyenv.zsh"
