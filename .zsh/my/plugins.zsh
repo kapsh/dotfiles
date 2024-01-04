@@ -71,3 +71,5 @@ unset git_extras
 
 unfunction lazy_omz lazy_plugin lazy_snippet
 
+fpath+=/usr/share/zsh/vendor-completions/
+
