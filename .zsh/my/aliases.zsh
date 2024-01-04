@@ -35,7 +35,7 @@ alias scp='scp -r -o Compression=no'
 
 alias free='free -th'
 alias du='du -hsc'
-alias dfh='df -h -l -x tmpfs -x devtmpfs'
+alias dfh='df -h -l -x tmpfs -x devtmpfs -x efivarfs'
 
 (( $+commands[colordiff] )) && alias diff=colordiff
 (( $+commands[pinfo] )) && alias info=pinfo
