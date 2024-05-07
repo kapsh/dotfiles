@@ -76,3 +76,8 @@ view_tsv() {
 copypath() {
     realpath "$@" | tr -d "\n" | clipcopy
 }
+
+rpm-exe () {
+	rpm -ql "$@" | grep -Po '/s?bin/\K.+' | sort
+}
+
