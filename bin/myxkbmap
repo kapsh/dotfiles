@@ -1,6 +1,0 @@
-#!/bin/sh
-
-killall kbdd
-xset r rate 250
-setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:scroll -option compose:ralt
-kbdd

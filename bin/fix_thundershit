@@ -1,5 +1,0 @@
-#!/bin/bash
-
-PROFILE="${1:-~/.thunderbird}"
-find "${PROFILE}" -iname '*.msf' -delete
-echo 'Relaunch TB now'
