@@ -1,0 +1,9 @@
+{
+    "colorcolumn": 100,
+    "permbackup": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "saveundo": true,
+    "softwrap": true,
+    "wordwrap": true
+}
