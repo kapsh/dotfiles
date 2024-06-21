@@ -5,5 +5,6 @@
     "savecursor": true,
     "saveundo": true,
     "softwrap": true,
+    "tabhighlight": true,
     "wordwrap": true
 }
