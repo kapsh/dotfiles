@@ -77,8 +77,6 @@ WORDCHARS="${WORDCHARS//[\/.=-]}"  # default: *?_-.[]~=/&;!#$%^(){}<>
 autoload -U select-word-style
 select-word-style normal
 
-setopt correct_all
-
 # insert matches immediately (prevent picking common part of names)
 setopt no_menu_complete
 
